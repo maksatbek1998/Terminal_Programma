@@ -18,7 +18,6 @@ namespace Terminal
     /// </summary>
     public partial class MainWindow : Window
     {
-        int Chet = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -65,28 +64,33 @@ namespace Terminal
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             kassa.IsEnabled = false;
-            For_print for_Print = new For_print("Касса","27", "qwer");
-            for_Print.Check_Print();          
-            Thread.Sleep(600);
+            Zaderjka();
+            For_print for_Print = new For_print("Касса", "27", "qwer");
+            for_Print.Check_Print();
             kassa.IsEnabled = true;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Lab_A.IsEnabled = false;
+            Lab_A.IsEnabled = false;  
+            Zaderjka();
             For_print for_Print = new For_print("Лаборатория(А)", "27", "qwer");
             for_Print.Check_Print();
-            Thread.Sleep(600);
-            Lab_A.IsEnabled = true;
+            Lab_A.IsEnabled = true;         
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             Lab_B.IsEnabled = false;
+            Zaderjka();
             For_print for_Print = new For_print("Лаборатория(Б)", "27", "qwer");
             for_Print.Check_Print();
-            Thread.Sleep(600);
             Lab_B.IsEnabled = true;
+        }
+        public void Zaderjka()
+        {
+            Sleep_Window sleep_Window = new Sleep_Window();
+            sleep_Window.ShowDialog();
         }
     }
 }

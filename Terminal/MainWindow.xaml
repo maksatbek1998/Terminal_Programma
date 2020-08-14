@@ -19,8 +19,8 @@
         </Grid>
         <StackPanel VerticalAlignment="Center" Margin="0,0,0,0">
             <Button Style="{DynamicResource Menu_Button}" Content="Прием к врачу" Click="Button_Click"/>
-            <Button x:Name="kassa" Style="{DynamicResource Menu_Button}" Content="Касса" Click="Button_Click_1"/>
-            <Button x:Name="Lab_A" Style="{DynamicResource Menu_Button}" Content="Лаборатория(А)" Click="Button_Click_2"/>
+            <Button x:Name="kassa" Style="{DynamicResource Menu_Button}" Content="Касса" Click="Button_Click_1" />
+            <Button x:Name="Lab_A" Style="{DynamicResource Menu_Button}" Content="Лаборатория(А)" Click="Button_Click_2" />
             <Button x:Name="Lab_B" Style="{DynamicResource Menu_Button}" Content="Лаборатория(Б)" Click="Button_Click_3"/>
         </StackPanel>
         <Grid Height="150" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Right">

@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Folder_Windows\Sleep_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Folder_Windows\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +87,9 @@
     <Compile Include="Folder_Class\Check_Print.cs" />
     <Compile Include="Folder_Windows\For_print.xaml.cs">
       <DependentUpon>For_print.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Folder_Windows\Sleep_Window.xaml.cs">
+      <DependentUpon>Sleep_Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="Folder_Windows\Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
