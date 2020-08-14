@@ -11,20 +11,20 @@
             
             <RowDefinition Height="70"/>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="250"/>
+            <RowDefinition Height="220"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBlock x:Name="Profesia_text" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Гепатолог Гастроэнтролог" FontSize="30" Width="300" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Profesia_text" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Гепатолог Гастроэнтролог" FontSize="25" Width="270" TextAlignment="Center" TextWrapping="Wrap"/>
         </Grid>
         <Grid Grid.Row="1">
-            <TextBlock x:Name="Ochered_Number" VerticalAlignment="Center" HorizontalAlignment="Center" Text="П1" FontSize="70" Width="300" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Medium"/>
+            <TextBlock x:Name="Ochered_Number" VerticalAlignment="Center" HorizontalAlignment="Center" Text="П9999999" FontSize="60" Width="280" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Medium"/>
         </Grid>
         <Grid Grid.Row="2">
-            <Image x:Name="Qr_Image" Stretch="UniformToFill"/>
+            <Image x:Name="Qr_Image" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" Height="250" Width="250"/>
         </Grid>
         <Grid Grid.Row="3">
-            <TextBlock x:Name="Data_txt" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Дата и время" FontSize="25" Width="300" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Data_txt" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Дата и время" FontSize="20" Width="300" TextAlignment="Center" TextWrapping="Wrap"/>
         </Grid>
     </Grid>
 </Window>

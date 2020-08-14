@@ -9,7 +9,7 @@
             <Setter Property="Width" Value="700"/>
             <Setter Property="Margin" Value="10"/>
             <Setter Property="FontSize" Value="46"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/> 
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">

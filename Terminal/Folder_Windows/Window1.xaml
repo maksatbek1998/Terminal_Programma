@@ -13,17 +13,17 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Специалисты" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="DemiBold" Foreground="#FF01B1A2"/>
         <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Orientation="Vertical">
-            <Button Style="{DynamicResource Menu_Button1}" Content="№1 НЕВРОПОТОЛОК"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№2 КАРДИОЛОГ"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№3 ОФТАЛЬМОЛОГ"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№4 ГЕПАТОЛОГ,ГАСТРОЭНТРОЛОГ"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№5 НЕФРОЛОГ"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№6 ГЕМОТОЛОГ"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№7 ПЕДИАТР"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№8 ЭНДОКРИНОЛОГ"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№9 АЛЛЕРГОЛОГ"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№10 ЛОР"/>
-            <Button Style="{DynamicResource Menu_Button1}" Content="№11 СТОМАТОЛОГ"/>
+            <Button x:Name="Nevropotolog" Style="{DynamicResource Menu_Button1}" Content="№1 НЕВРОПОТОЛОК" Click="Nevropotolog_Click"/>
+            <Button x:Name="Kardiolog" Style="{DynamicResource Menu_Button1}" Content="№2 КАРДИОЛОГ" Click="Kardiolog_Click"/>
+            <Button x:Name="Oftalmolog" Style="{DynamicResource Menu_Button1}" Content="№3 ОФТАЛЬМОЛОГ" Click="Oftalmolog_Click"/>
+            <Button x:Name="Gepatolog" Style="{DynamicResource Menu_Button1}" Content="№4 ГЕПАТОЛОГ,ГАСТРОЭНТРОЛОГ" Click="Gepatolog_Click"/>
+            <Button x:Name="Nefrolog" Style="{DynamicResource Menu_Button1}" Content="№5 НЕФРОЛОГ" Click="Nefrolog_Click"/>
+            <Button x:Name="Gemotolog" Style="{DynamicResource Menu_Button1}" Content="№6 ГЕМОТОЛОГ" Click="Gemotolog_Click"/>
+            <Button x:Name="Pediatr" Style="{DynamicResource Menu_Button1}" Content="№7 ПЕДИАТР" Click="Pediatr_Click"/>
+            <Button x:Name="Endokrinolog" Style="{DynamicResource Menu_Button1}" Content="№8 ЭНДОКРИНОЛОГ" Click="Endokrinolog_Click"/>
+            <Button x:Name="Allergolog" Style="{DynamicResource Menu_Button1}" Content="№9 АЛЛЕРГОЛОГ" Click="Allergolog_Click"/>
+            <Button x:Name="Lor" Style="{DynamicResource Menu_Button1}" Content="№10 ЛОР" Click="Lor_Click"/>
+            <Button x:Name="Stomotolog" Style="{DynamicResource Menu_Button1}" Content="№11 СТОМАТОЛОГ" Click="Stomotolog_Click"/>
         </WrapPanel>
         <Button Style="{DynamicResource Menu_Button1}" Width="200" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1" Margin="0,0,35,30" Click="Button_Click">
             <StackPanel Orientation="Horizontal">

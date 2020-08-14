@@ -40,24 +40,24 @@ namespace Terminal.Folder_Windows
         public void Check_Print()
         {         
                 PrintDialog printDialog = new PrintDialog();
-                //if (printDialog.ShowDialog() == true)
-                //{
-                    //grd.LayoutTransform = new ScaleTransform(5, 5);
+            //if (printDialog.ShowDialog() == true)
+            //{
+                //grd.LayoutTransform = new ScaleTransform(5, 5);
 
-                    grd.Measure(new System.Windows.Size(printDialog.PrintableAreaWidth, double.PositiveInfinity));
+                grd.Measure(new System.Windows.Size(printDialog.PrintableAreaWidth, double.PositiveInfinity));
 
-                    grd.Arrange(new Rect(grd.DesiredSize));
+                grd.Arrange(new Rect(grd.DesiredSize));
 
-                    grd.UpdateLayout();
+                grd.UpdateLayout();
 
-                    printDialog.PrintTicket.PageMediaSize = new PageMediaSize(printDialog.PrintableAreaWidth, grd.ActualHeight);
+                printDialog.PrintTicket.PageMediaSize = new PageMediaSize(printDialog.PrintableAreaWidth, grd.ActualHeight);
 
-                    printDialog.PrintQueue = LocalPrintServer.GetDefaultPrintQueue();
-  
-                    printDialog.PrintVisual(grd, "Check");
+                printDialog.PrintQueue = LocalPrintServer.GetDefaultPrintQueue();
 
-                //}
-        }
+                printDialog.PrintVisual(grd, "Check");
+
+        //}
+    }
         private ImageSource BitmapToImageSourse(Bitmap bitmap)
         {
             using (MemoryStream memory = new MemoryStream())
