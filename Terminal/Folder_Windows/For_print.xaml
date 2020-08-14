@@ -1,0 +1,30 @@
+﻿<Window x:Class="Terminal.Folder_Windows.For_print"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Terminal.Folder_Windows"
+        mc:Ignorable="d"
+        Title="For_print" Height="500" Width="300" MaxHeight="550" MaxWidth="300">
+    <Grid x:Name="grd">
+        <Grid.RowDefinitions> 
+            
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock x:Name="Profesia_text" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Гепатолог Гастроэнтролог" FontSize="30" Width="300" TextAlignment="Center" TextWrapping="Wrap"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock x:Name="Ochered_Number" VerticalAlignment="Center" HorizontalAlignment="Center" Text="П1" FontSize="70" Width="300" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Medium"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Image x:Name="Qr_Image" Stretch="UniformToFill"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <TextBlock x:Name="Data_txt" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Дата и время" FontSize="25" Width="300" TextAlignment="Center" TextWrapping="Wrap"/>
+        </Grid>
+    </Grid>
+</Window>
