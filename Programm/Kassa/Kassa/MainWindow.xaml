@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="125"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         <Grid.Effect>
             <DropShadowEffect BlurRadius="10" Direction="280" Opacity="1" ShadowDepth="2"/>
@@ -38,7 +38,6 @@
                     </Button>
                 </StackPanel>
                 <Button Style="{DynamicResource Menu_Button}" Height="30" Width="299" Margin="3,0,5,10" Content="К враче"/>
-                <Button Style="{DynamicResource Menu_Button}" Height="30" Width="299" Margin="3,0,5,10" Content="Заверщить"/>
             </StackPanel>
         </Grid>
     </Grid>
