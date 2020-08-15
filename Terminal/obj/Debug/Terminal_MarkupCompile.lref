@@ -1,7 +1,15 @@
 ﻿
+<<<<<<< HEAD
 FD:\Terminal\Terminal\App.xaml;;
 FD:\Terminal\Terminal\Folder_Windows\For_print.xaml;;
 FD:\Terminal\Terminal\Folder_Windows\Window1.xaml;;
 FD:\Terminal\Terminal\MainWindow.xaml;;
 FD:\Terminal\Terminal\Folder_Windows\Sleep_Window.xaml;;
+=======
+FD:\project\electron\Terminal_Programma\Terminal\App.xaml;;
+FD:\project\electron\Terminal_Programma\Terminal\Folder_Windows\For_print.xaml;;
+FD:\project\electron\Terminal_Programma\Terminal\Folder_Windows\Sleep_Window.xaml;;
+FD:\project\electron\Terminal_Programma\Terminal\Folder_Windows\Window1.xaml;;
+FD:\project\electron\Terminal_Programma\Terminal\MainWindow.xaml;;
+>>>>>>> fb132aeda6415e971b77ab7cbe4b02aecdb3fd47
 

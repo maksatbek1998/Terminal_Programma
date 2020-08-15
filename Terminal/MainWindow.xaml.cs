@@ -54,7 +54,7 @@ namespace Terminal
             timer.Tick += Time_Metka;
             timer.Start();
         }
-
+        //дота
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 window1 = new Window1();
