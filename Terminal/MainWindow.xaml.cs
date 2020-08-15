@@ -16,6 +16,7 @@ namespace Terminal
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    /*Program*/
     public partial class MainWindow : Window
     {
         public MainWindow()
