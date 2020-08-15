@@ -26,6 +26,7 @@ namespace Terminal
             timer.Tick += Time;
             timer.Start();
             Time_Strart();
+            //awd dfs
         }
         void Time(object sender, EventArgs e)
         {
