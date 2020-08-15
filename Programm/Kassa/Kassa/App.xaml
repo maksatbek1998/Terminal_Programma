@@ -66,5 +66,34 @@ Content="{TemplateBinding Content}" />
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="Togle_Button" TargetType="ToggleButton">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border x:Name="border" BorderBrush="#B2B9A7" BorderThickness="2">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="10" ShadowDepth="0" Direction="250" RenderingBias="Quality"/>
+                            </Border.Effect>
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF01AC9E" Offset="0"/>
+                                    <GradientStop Color="#FF00EAD6" Offset="1"/>
+                                    <GradientStop Color="#FF01CFBE" Offset="0.51"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#019488"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
