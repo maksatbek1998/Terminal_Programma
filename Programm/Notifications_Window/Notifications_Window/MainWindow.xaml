@@ -1,0 +1,41 @@
+﻿<Window x:Class="Notifications_Window.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Notifications_Window"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="270" ResizeMode="NoResize" Width="450" WindowStyle="None" Icon="Image/Png_Ico.png" AllowsTransparency="True" Topmost="True" Loaded="Window_Loaded" Background="{x:Null}">
+    <Grid Background="White" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Margin="10,10,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="10" Direction="280" Opacity="1" ShadowDepth="2"/>
+        </Grid.Effect>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="0">
+            <Button Style="{DynamicResource Button_Remov_Row}" Padding="0,0,0,-12" Click="Button_Click_1">
+                <Image Source="Image/Minus.png"/>
+            </Button>
+            <Button Style="{DynamicResource Button_Remov_Row}" Click="Button_Click">
+                <Image Source="Image/Close1.png"/>
+            </Button>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <TextBlock Text="777" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#01B3A4" FontWeight="Bold" Margin="0,-15,0,0"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <ToggleButton x:Name="Next" Width="200" Margin="5" Height="40" Content="Следующий" Style="{DynamicResource Togle_Button}" Click="Next_Click"/>
+                <Button Style="{DynamicResource Menu_Button}" Height="40" Width="200">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Image/pozvat.png" Margin="-20,0,15,0"/>
+                        <TextBlock Text="Позвать" VerticalAlignment="Center" FontSize="20"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

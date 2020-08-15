@@ -1,0 +1,16 @@
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\bin\Debug\Notifications_Window.exe.config
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\bin\Debug\Notifications_Window.exe
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\bin\Debug\Notifications_Window.pdb
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\MainWindow.g.cs
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\App.g.cs
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window_MarkupCompile.cache
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window_MarkupCompile.lref
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\MainWindow.baml
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window.g.resources
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window.Properties.Resources.resources
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window.exe
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\Notifications_Window.pdb
+C:\Users\user\Desktop\Notifications_Window\Notifications_Window\obj\Debug\App.baml
