@@ -67,6 +67,7 @@ D:\project\electron\Terminal_Programma\Terminal\bin\Debug\Terminal.exe.config
 D:\project\electron\Terminal_Programma\Terminal\bin\Debug\Terminal.exe
 D:\project\electron\Terminal_Programma\Terminal\bin\Debug\Terminal.pdb
 D:\project\electron\Terminal_Programma\Terminal\bin\Debug\System.Drawing.Common.dll
+D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Terminal.csprojAssemblyReference.cache
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Folder_Windows\For_print.g.cs
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Folder_Windows\Sleep_Window.g.cs
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Folder_Windows\Window1.g.cs
@@ -87,4 +88,3 @@ D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Terminal.csproj.CopyCo
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Terminal.exe
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Terminal.pdb
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Terminal.csprojAssemblyReference.cache
