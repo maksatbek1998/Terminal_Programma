@@ -55,7 +55,7 @@ namespace Terminal
             timer.Tick += Time_Metka;
             timer.Start();
         }
-
+        //дота
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 window1 = new Window1();
@@ -66,7 +66,7 @@ namespace Terminal
         {
             kassa.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Касса", "27", "qwer");
+            For_print for_Print = new For_print("Касса", "27", "20.10.2020_27");
             for_Print.Check_Print();
             kassa.IsEnabled = true;
         }

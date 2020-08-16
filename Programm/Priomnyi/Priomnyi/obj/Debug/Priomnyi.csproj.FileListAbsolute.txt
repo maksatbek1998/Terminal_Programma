@@ -1,0 +1,16 @@
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\MainWindow.g.cs
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\App.g.cs
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi_MarkupCompile.cache
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi_MarkupCompile.lref
+C:\Users\user\Desktop\Priomnyi\Priomnyi\bin\Debug\Priomnyi.exe.config
+C:\Users\user\Desktop\Priomnyi\Priomnyi\bin\Debug\Priomnyi.exe
+C:\Users\user\Desktop\Priomnyi\Priomnyi\bin\Debug\Priomnyi.pdb
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\App.baml
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\MainWindow.baml
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi.g.resources
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi.Properties.Resources.resources
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi.exe
+C:\Users\user\Desktop\Priomnyi\Priomnyi\obj\Debug\Priomnyi.pdb
