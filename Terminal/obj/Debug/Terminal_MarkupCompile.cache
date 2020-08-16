@@ -9,20 +9,12 @@ Terminal
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-D:\Terminal\Terminal\App.xaml
-4-1655986443
-
-10-538985359
-18-701654975
-=======
 D:\project\electron\Terminal_Programma\Terminal\App.xaml
 4-1655986443
 
-10-538985359
+9303374008
 18-1840391530
->>>>>>> fb132aeda6415e971b77ab7cbe4b02aecdb3fd47
 Folder_Windows\For_print.xaml;Folder_Windows\Sleep_Window.xaml;Folder_Windows\Window1.xaml;MainWindow.xaml;
 
-True
+False
 

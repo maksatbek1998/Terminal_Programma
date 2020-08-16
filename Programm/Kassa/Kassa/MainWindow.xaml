@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kassa"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" ResizeMode="NoResize" Width="350" WindowStyle="None" Icon="Image/Png_Ico.png" AllowsTransparency="True" Topmost="True" Loaded="Window_Loaded" Background="{x:Null}">
+        Title="MainWindow" Height="320" ResizeMode="NoResize" Width="350" WindowStyle="None" Icon="Image/Png_Ico.png" AllowsTransparency="True" Topmost="True" Loaded="Window_Loaded" Background="{x:Null}">
     <Grid Background="White" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Margin="10,10,5,5">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="160"/>
             <RowDefinition Height="125"/>
         </Grid.RowDefinitions>
         <Grid.Effect>
@@ -24,21 +24,20 @@
             </Button>
         </StackPanel>
         <Grid Grid.Row="1">
-            <TextBlock Text="55555" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#01B3A4"/>
+            <TextBlock x:Name="Label" Text="55555" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#01B3A4"/>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Style="{DynamicResource Menu_Button}" Height="30" Width="145" Margin="5,0,5,10" Content="Далее"/>
-                    <Button Style="{DynamicResource Menu_Button}" Height="30" Width="145" Margin="3,0,5,10">
+                    <Button x:Name="btn_1" Style="{DynamicResource Menu_Button}" Height="30" Width="145" Margin="5,0,5,10" Content="Далее" Click="Button_Click_2"/>
+                    <Button x:Name="btn_2" Style="{DynamicResource Menu_Button}" Height="30" Width="145" Margin="3,0,5,10" Click="Button_Click_3">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Image/pozvat.png" Margin="-20,0,15,0"/>
                             <TextBlock Text="Позвать" VerticalAlignment="Center" FontSize="18"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
-                <Button Style="{DynamicResource Menu_Button}" Height="30" Width="299" Margin="3,0,5,10" Content="К враче"/>
-                <Button Style="{DynamicResource Menu_Button}" Height="30" Width="299" Margin="3,0,5,10" Content="Заверщить"/>
+                <Button x:Name="btn_3" Style="{DynamicResource Menu_Button}" Height="40" Margin="5,0,185,10" Content="Удаление очер" Click="Button_Click_4"/>
             </StackPanel>
         </Grid>
     </Grid>
