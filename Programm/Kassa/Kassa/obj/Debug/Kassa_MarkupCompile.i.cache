@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Terminal\Programm\Kassa\Kassa\obj\Debug\
+D:\project\electron\Terminal_Programma\Programm\Kassa\Kassa\obj\Debug\
 Kassa
 none
 false
 DEBUG;TRACE
-D:\Terminal\Programm\Kassa\Kassa\App.xaml
+D:\project\electron\Terminal_Programma\Programm\Kassa\Kassa\App.xaml
 21521798185
 
-10-1196399043
+71083744688
 13-1505183044
 MainWindow.xaml;ParolWindow.xaml;
 
-False
+True
 
