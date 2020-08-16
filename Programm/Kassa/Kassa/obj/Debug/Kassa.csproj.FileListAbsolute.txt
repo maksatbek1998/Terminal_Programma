@@ -30,3 +30,5 @@ D:\Terminal\Programm\Kassa\Kassa\obj\Debug\Kassa.csproj.GenerateResource.cache
 D:\Terminal\Programm\Kassa\Kassa\obj\Debug\Kassa.csproj.CoreCompileInputs.cache
 D:\Terminal\Programm\Kassa\Kassa\obj\Debug\Kassa.exe
 D:\Terminal\Programm\Kassa\Kassa\obj\Debug\Kassa.pdb
+D:\Terminal\Programm\Kassa\Kassa\obj\Debug\ParolWindow.g.cs
+D:\Terminal\Programm\Kassa\Kassa\obj\Debug\ParolWindow.baml

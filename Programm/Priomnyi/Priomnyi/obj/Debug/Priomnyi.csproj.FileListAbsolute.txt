@@ -30,3 +30,5 @@ D:\Terminal\Programm\Priomnyi\Priomnyi\obj\Debug\Priomnyi.csproj.GenerateResourc
 D:\Terminal\Programm\Priomnyi\Priomnyi\obj\Debug\Priomnyi.csproj.CoreCompileInputs.cache
 D:\Terminal\Programm\Priomnyi\Priomnyi\obj\Debug\Priomnyi.exe
 D:\Terminal\Programm\Priomnyi\Priomnyi\obj\Debug\Priomnyi.pdb
+D:\Terminal\Programm\Priomnyi\Priomnyi\obj\Debug\ParolWindow.g.cs
+D:\Terminal\Programm\Priomnyi\Priomnyi\obj\Debug\ParolWindow.baml

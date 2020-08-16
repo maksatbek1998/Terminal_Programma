@@ -27,7 +27,6 @@ namespace Glavnyi_Monitor
             btn_Click();
    
         }
-
         private void btn_Click()
         {
             Storyboard sb = this.FindResource("Kalomka_Animation") as Storyboard;
