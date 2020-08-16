@@ -16,6 +16,7 @@ namespace Terminal
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    /*Program*/
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -65,7 +66,7 @@ namespace Terminal
         {
             kassa.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Касса", "27", "qwer");
+            For_print for_Print = new For_print("Касса", "27", "20.10.2020_27");
             for_Print.Check_Print();
             kassa.IsEnabled = true;
         }

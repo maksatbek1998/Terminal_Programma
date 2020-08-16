@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Folder_Class\StaticClass.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="ViewModels\ViewModelClass.cs" />
     <Page Include="Folder_Windows\For_print.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +87,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Folder_Class\Check_Print.cs" />
     <Compile Include="Folder_Windows\For_print.xaml.cs">
       <DependentUpon>For_print.xaml</DependentUpon>
@@ -100,6 +104,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\LanguageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -138,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Icon\Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Flag\eng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
