@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Kassa.Class;
 
 namespace Kassa
 {
@@ -24,7 +25,8 @@ namespace Kassa
         {
             InitializeComponent();
         }
-
+        Data t = new Data();
+        Treatment check = new Treatment();
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
@@ -46,17 +48,42 @@ namespace Kassa
             this.Left = desctop.Right - this.Width;
             this.Top = desctop.Bottom - this.Height;
         }
-
-        private void Next_Click(object sender, RoutedEventArgs e)
+        bool btn = true;
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (Next.IsChecked == true)
+            if (btn == true) 
+            { 
+                Label.Text = check.dalee(); 
+                btn_1.Content = "Завершить"; 
+                btn = false;   // bool для поведения кнопки
+            }
+            else 
             {
-                Next.Content = "Заверщить";
+                check.delete_table();
+                Label.Text = ""; 
+                btn_1.Content = "Далее";
+                btn = true;   // bool для поведения кнопки
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            check.pozvat();
+        }
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("удалить очер?", "удаление", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                Label.Text = "";
+                check.delete_ocheredi();
+                btn_1.Content = "Далее";
+                btn = true;            // bool для поведения кнопки
             }
             else
             {
-                Next.Content = "Следующий";
+
             }
+            
         }
     }
 }
