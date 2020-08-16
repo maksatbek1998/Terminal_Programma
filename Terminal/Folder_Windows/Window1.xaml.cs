@@ -1,31 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Terminal.Folder_Class;
 
 namespace Terminal.Folder_Windows
 {
-    
+
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
     public partial class Window1 : Window
     {
+        private dbConnect dbCon=new dbConnect();
+
         public Window1()
         {
             InitializeComponent();
         }
 
+        DateTime thisDay = DateTime.Today;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -35,7 +27,10 @@ namespace Terminal.Folder_Windows
         {
             Nevropotolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Нервопотолог", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("В");
+            For_print for_Print = new For_print("Нервопотолог", numberOchered,
+                thisDay.ToString("dd.MM.yyyy") + "_" + "В_" + numberOchered);
+            
             for_Print.Check_Print();
             Nevropotolog.IsEnabled = true;
         }
@@ -44,7 +39,10 @@ namespace Terminal.Folder_Windows
         {
             Kardiolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Кардиолог", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("Р");
+            For_print for_Print = new For_print("Кардиолог", numberOchered,
+                thisDay.ToString("dd.MM.yyyy") + "_" + "Р_" + numberOchered);
+           
             for_Print.Check_Print();
             Kardiolog.IsEnabled = true;
         }
@@ -53,7 +51,9 @@ namespace Terminal.Folder_Windows
         {
             Oftalmolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Офтальмолог", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("Ф");
+            For_print for_Print = new For_print("Офтальмолог", numberOchered,
+                thisDay.ToString("dd.MM.yyyy") + "_" + "Ф_" + numberOchered);
             for_Print.Check_Print(); 
             Oftalmolog.IsEnabled = true;
         }
@@ -62,8 +62,10 @@ namespace Terminal.Folder_Windows
         {
             Gepatolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Гепатолог,Гастроэнтролог", "27", "qwer");
-            for_Print.Check_Print();
+            string numberOchered = dbCon.RegistrOchered("Э");
+            For_print for_Print = new For_print("Гепатолог", numberOchered,
+                thisDay.ToString("dd.MM.yyyy") + "_" + "Э_" + numberOchered);
+           for_Print.Check_Print();
             Gepatolog.IsEnabled = true;
         }
 
@@ -71,7 +73,9 @@ namespace Terminal.Folder_Windows
         {
             Nefrolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Нефролог", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("Ф");
+            For_print for_Print = new For_print("Нефролог", numberOchered,
+                thisDay.ToString("dd.MM.yyyy") + "_" + "Ф_" + numberOchered);
             for_Print.Check_Print();
             Nefrolog.IsEnabled = true;
         }
@@ -80,7 +84,9 @@ namespace Terminal.Folder_Windows
         {
             Gemotolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Гемотог", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("М");
+            For_print for_Print = new For_print("Гемотог", numberOchered,
+            thisDay.ToString("dd.MM.yyyy") + "_" + "М_" + numberOchered);
             for_Print.Check_Print();
             Gemotolog.IsEnabled = true;
         }
@@ -89,7 +95,9 @@ namespace Terminal.Folder_Windows
         {
             Pediatr.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Педиатр", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("П");
+            For_print for_Print = new For_print("Педиатр", numberOchered,
+            thisDay.ToString("dd.MM.yyyy") + "_" + "П_" + numberOchered);
             for_Print.Check_Print();
             Pediatr.IsEnabled = true;
         }
@@ -98,7 +106,9 @@ namespace Terminal.Folder_Windows
         {
             Endokrinolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Эндокринолог", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("Д");
+            For_print for_Print = new For_print("Эндокринолог", numberOchered,
+            thisDay.ToString("dd.MM.yyyy") + "_" + "Д_" + numberOchered);
             for_Print.Check_Print();
             Endokrinolog.IsEnabled = true;
         }
@@ -107,7 +117,9 @@ namespace Terminal.Folder_Windows
         {
             Allergolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Аллерголог", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("А");
+            For_print for_Print = new For_print("Аллерголог", numberOchered,
+            thisDay.ToString("dd.MM.yyyy") + "_" + "А_" + numberOchered);
             for_Print.Check_Print();
             Allergolog.IsEnabled = true;
         }
@@ -116,7 +128,9 @@ namespace Terminal.Folder_Windows
         {
             Lor.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Лор", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("Л");
+            For_print for_Print = new For_print("Лор", numberOchered,
+            thisDay.ToString("dd.MM.yyyy") + "_" + "Л_" + numberOchered);
             for_Print.Check_Print();
             Lor.IsEnabled = true;
         }
@@ -125,7 +139,9 @@ namespace Terminal.Folder_Windows
         {
             Stomotolog.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Стоматолог", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("С");
+            For_print for_Print = new For_print("Стоматолог", numberOchered,
+            thisDay.ToString("dd.MM.yyyy") + "_" + "С_" + numberOchered);
             for_Print.Check_Print();
             Stomotolog.IsEnabled = true;
         }
