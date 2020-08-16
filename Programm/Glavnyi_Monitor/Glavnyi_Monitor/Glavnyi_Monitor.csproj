@@ -67,8 +67,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Proba2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Proba2.xaml.cs">
+      <DependentUpon>Proba2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -102,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Kol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Person.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

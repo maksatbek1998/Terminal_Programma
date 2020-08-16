@@ -494,7 +494,8 @@
                         <TextBlock.Foreground>
                             <SolidColorBrush x:Name="buttonColor" Color="White" />
                         </TextBlock.Foreground>
-         
+         
+
                     </TextBlock>
                     <Grid Width="120" Height="120" Margin="20,0,50,0">
                         <Path x:Name="path2" Stroke="White" StrokeThickness="5"  Stretch="Fill" Data="M250,250 A1,100,0,0,0,250,0" Margin="58.667,30,28.959,29.667" Visibility="Collapsed" />

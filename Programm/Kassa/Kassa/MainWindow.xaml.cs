@@ -46,5 +46,17 @@ namespace Kassa
             this.Left = desctop.Right - this.Width;
             this.Top = desctop.Bottom - this.Height;
         }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            if (Next.IsChecked == true)
+            {
+                Next.Content = "Заверщить";
+            }
+            else
+            {
+                Next.Content = "Следующий";
+            }
+        }
     }
 }

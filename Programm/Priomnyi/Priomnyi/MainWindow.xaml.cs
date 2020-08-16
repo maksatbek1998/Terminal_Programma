@@ -46,5 +46,17 @@ namespace Priomnyi
         {
             this.DragMove();
         }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            if (Next.IsChecked == true)
+            {
+                Next.Content = "Заверщить";
+            }
+            else
+            {
+                Next.Content = "Следующий";
+            }
+        }
     }
 }
