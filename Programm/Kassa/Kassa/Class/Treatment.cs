@@ -24,6 +24,7 @@ namespace Kassa.Class
                 hranilishe_stroki[1] = basa_stroka[1];
                 hranilishe_stroki[2] = basa_stroka[2];
                 hranilishe_stroki[3] = basa_stroka[3];
+                
                 pozvat();
 
                 return basa_stroka[1];
@@ -38,21 +39,21 @@ namespace Kassa.Class
         {
             try
             {
-                if (hranilishe_stroki[2] == "4") //условие для лаб
+                if (hranilishe_stroki[2] == "13") //условие для лаб
                 {
-                    data.Registr("insert into queue_lab1(queue_number, category_id) values(" + hranilishe_stroki[1] + ", " + hranilishe_stroki[2] + ")");
+                    data.Registr("insert into queue_lab1(queue_number, category_id,with_direction) values(" + hranilishe_stroki[1] + ", " + hranilishe_stroki[2] + "," + 0 + ")");
                 }
 
-                else if (hranilishe_stroki[2] == "5") //условие для лаб
+                else if (hranilishe_stroki[2] == "15") //условие для лаб
                 {
-                    data.Registr("insert into queue_lab2(queue_number, category_id) values(" + hranilishe_stroki[1] + ", " + hranilishe_stroki[2] + ")");
+                    data.Registr("insert into queue_lab2(queue_number, category_id,with_direction) values(" + hranilishe_stroki[1] + ", " + hranilishe_stroki[2] + "," + 0 + ")");
                 }
 
-                else if (hranilishe_stroki[2] == "3") {/*ну типа касса*/}  //условие для кассы
+                else if (hranilishe_stroki[2] == "12") {/*ну типа касса*/}  //условие для кассы
 
                 else
                 {
-                    data.Registr("insert into queue_users(queue_number, category_id) values(" + hranilishe_stroki[1] + ", " + hranilishe_stroki[2] + ")"); //врачи
+                    data.Registr("insert into queue_users(queue_number, category_id,with_direction) values(" + hranilishe_stroki[1] + ", " + hranilishe_stroki[2] + ","+0+")"); //врачи
                 }
                 data.Registr("DELETE FROM queue_cashier WHERE id = " + id_int + "");
             }
@@ -67,7 +68,7 @@ namespace Kassa.Class
         {
             try
             { 
-                data.Registr("insert into queue_talker(queue_number, category_id) values(" + hranilishe_stroki[1] + ", " + hranilishe_stroki[2] + ")");
+                data.Registr("insert into queue_talker(queue_number, category_id) values(" + hranilishe_stroki[1] + ", " + 3 + ")"); //тут для голоса
             }
             catch
             {

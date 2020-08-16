@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Priomnyi.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,8 @@ namespace Priomnyi
         {
             InitializeComponent();
         }
-
+        Data data = new Data();
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -31,9 +33,18 @@ namespace Priomnyi
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Hide();
+            if (data.login(log_text.Text,pass_text.Password)==true) 
+            {
+                
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Hide();
+            }
+            else 
+            {
+                log_text.Text = "";
+                pass_text.Password = "";
+            }
         }
     }
 }

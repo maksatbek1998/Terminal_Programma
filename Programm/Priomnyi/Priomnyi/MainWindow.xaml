@@ -24,24 +24,24 @@
             </Button>
         </StackPanel>
         <Grid Grid.Row="1">
-            <TextBlock Text="55555" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#01B3A4"/>
+            <TextBlock x:Name="Label" Text="55555" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#01B3A4"/>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <ToggleButton x:Name="Next" Height="30" Width="145" Margin="5,0,5,10" Content="Следующий" Style="{DynamicResource Togle_Button}" Click="Next_Click"/>
-                    <Button Style="{DynamicResource Menu_Button}" Height="30" Width="145" Margin="3,0,5,10">
+                    <Button x:Name="golos_btn" Style="{DynamicResource Menu_Button}" Height="30" Width="145" Margin="3,0,5,10" Click="golos_btn_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Image/pozvat.png" Margin="-20,0,15,0"/>
                             <TextBlock Text="Позвать" VerticalAlignment="Center" FontSize="18"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
-                <Button Style="{DynamicResource Menu_Button}" Height="30" Width="299" Margin="3,0,5,10" Content="Без направления"/>
+                <Button x:Name="s_nap_btn" Style="{DynamicResource Menu_Button}" Height="30" Width="299" Margin="3,0,5,10" Content="Без направления" Click="bez_nap_btn_Click"/>
 
-                <Button Style="{DynamicResource Menu_Button}" Height="30" Width="299" Margin="5,0,5,10" Content="С направлением"/>
-                <Button Style="{DynamicResource Menu_Button}" Height="30" Width="299"
-                        Margin="5,0,5,10" Content="Удалиь из очереди"/>
+                <Button x:Name="bez_nap_btn" Style="{DynamicResource Menu_Button}" Height="30" Width="299" Margin="5,0,5,10" Content="С направлением" Click="s_nap_btn_Click"/>
+                <Button x:Name="delete_btn" Style="{DynamicResource Menu_Button}" Height="30" Width="299"
+                        Margin="5,0,5,10" Content="Удалиь из очереди" Click="delete_btn_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

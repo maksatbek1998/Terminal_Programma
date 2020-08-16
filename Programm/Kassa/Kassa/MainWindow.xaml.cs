@@ -55,13 +55,14 @@ namespace Kassa
             { 
                 Label.Text = check.dalee(); 
                 btn_1.Content = "Завершить"; 
-                btn = false; }
+                btn = false;   // bool для поведения кнопки
+            }
             else 
             {
                 check.delete_table();
                 Label.Text = ""; 
                 btn_1.Content = "Далее";
-                btn = true; 
+                btn = true;   // bool для поведения кнопки
             }
         }
 
@@ -71,7 +72,18 @@ namespace Kassa
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            check.delete_ocheredi();
+            if (MessageBox.Show("удалить очер?", "удаление", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                Label.Text = "";
+                check.delete_ocheredi();
+                btn_1.Content = "Далее";
+                btn = true;            // bool для поведения кнопки
+            }
+            else
+            {
+
+            }
+            
         }
     }
 }

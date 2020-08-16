@@ -30,3 +30,7 @@ D:\project\electron\Terminal_Programma\Programm\Priomnyi\Priomnyi\obj\Debug\Prio
 D:\project\electron\Terminal_Programma\Programm\Priomnyi\Priomnyi\obj\Debug\Priomnyi.csproj.CoreCompileInputs.cache
 D:\project\electron\Terminal_Programma\Programm\Priomnyi\Priomnyi\obj\Debug\Priomnyi.exe
 D:\project\electron\Terminal_Programma\Programm\Priomnyi\Priomnyi\obj\Debug\Priomnyi.pdb
+D:\project\electron\Terminal_Programma\Programm\Priomnyi\Priomnyi\bin\Debug\MySql.Data.DLL
+D:\project\electron\Terminal_Programma\Programm\Priomnyi\Priomnyi\obj\Debug\ParolWindow.g.cs
+D:\project\electron\Terminal_Programma\Programm\Priomnyi\Priomnyi\obj\Debug\ParolWindow.baml
+D:\project\electron\Terminal_Programma\Programm\Priomnyi\Priomnyi\obj\Debug\Priomnyi.csproj.CopyComplete
