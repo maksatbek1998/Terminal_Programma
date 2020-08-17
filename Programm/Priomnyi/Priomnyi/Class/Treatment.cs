@@ -9,38 +9,35 @@ namespace Priomnyi.Class
     class Treatment
     {
         Data data;
-        
+
         static string[] hranilishe_stroki = { "0", "0", "0" };
         int id_int = 0;
-        
+
         public string dalee()
         {
-            try
+            data = new Data();
+            data.del += db =>
             {
-                hranilishe_stroki[1] = "";
-                data = new Data();
-                data.del += db => {
+                if (db.Rows.Count > 0)
+                {
                     hranilishe_stroki[0] = db.Rows[0][0].ToString();
                     hranilishe_stroki[1] = db.Rows[0][1].ToString();
                     hranilishe_stroki[2] = db.Rows[0][2].ToString();
-                };
-                data.SoursData("SELECT * FROM queue_reception WHERE id = " + id_int + "");
+                }
+                
+            };
+            data.SoursData("SELECT * FROM queue_reception WHERE id = " + id_int + "");
+            if (hranilishe_stroki[0]!=null) {
                 string id = data.DisplayReturn("SELECT MIN(id) FROM queue_reception WHERE user_id IS NULL");
                 id_int = Convert.ToInt32(id.ToString());
-                data.sendP += db1 =>
-                {
-                    data.Registr("UPDATE queue_reception SET user_id = " + db1 + " WHERE id=" + id_int + "");
-                };
-                //bool b= data.login();
-                
-
+                data.Registr("UPDATE queue_reception SET user_id = " + ClassStatic.Id + " WHERE id=" + id_int + "");
                 pozvat();
-                
+
                 return hranilishe_stroki[1];
             }
-            catch
+            else
             {
-                return "пусто";
+                return "Пусто";
             }
 
         }

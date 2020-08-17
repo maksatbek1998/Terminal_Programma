@@ -35,6 +35,7 @@ namespace Priomnyi
             var desctop = System.Windows.SystemParameters.WorkArea;
             this.Left = desctop.Right - this.Width;
             this.Top = desctop.Bottom - this.Height;
+            userText.Text = ClassStatic.Name;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
