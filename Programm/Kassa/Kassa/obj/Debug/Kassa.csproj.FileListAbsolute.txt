@@ -1,0 +1,16 @@
+C:\Users\user\Desktop\Kassa\Kassa\bin\Debug\Kassa.exe.config
+C:\Users\user\Desktop\Kassa\Kassa\bin\Debug\Kassa.exe
+C:\Users\user\Desktop\Kassa\Kassa\bin\Debug\Kassa.pdb
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\MainWindow.g.cs
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\App.g.cs
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa_MarkupCompile.cache
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa_MarkupCompile.lref
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\MainWindow.baml
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa.g.resources
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa.Properties.Resources.resources
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa.exe
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\Kassa.pdb
+C:\Users\user\Desktop\Kassa\Kassa\obj\Debug\App.baml
