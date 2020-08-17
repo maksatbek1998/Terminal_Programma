@@ -88,3 +88,4 @@ D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Terminal.csproj.CopyCo
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Terminal.exe
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\Terminal.pdb
 D:\project\electron\Terminal_Programma\Terminal\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Terminal\Terminal\obj\Debug\GeneratedInternalTypeHelper.g.cs
