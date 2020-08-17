@@ -55,9 +55,7 @@ Content="{TemplateBinding Content}" />
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter TargetName="border" Property="Background" Value="#019488"/>
                             </Trigger>
-                            <DataTrigger Binding="{Binding ElementName=Next,Path=IsChecked}" Value="false">
-                                <Setter  Property="IsEnabled" Value="False" />
-                            </DataTrigger>
+      
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter TargetName="border" Property="Background" Value="#01B3A4" />
                             </Trigger>

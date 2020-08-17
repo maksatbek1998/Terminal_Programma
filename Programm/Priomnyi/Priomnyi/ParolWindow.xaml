@@ -19,8 +19,8 @@
         <Canvas Grid.Row="1">
             <Image Source="Image/Log.png" Height="59" Width="42" Canvas.Left="55" Canvas.Top="4"/>
             <Image Source="Image/Pass.png" Height="59" Width="42" Canvas.Left="55" Canvas.Top="61"/>
-            <TextBox Height="31" Width="288" Canvas.Left="102" Canvas.Top="20" FontSize="16" VerticalContentAlignment="Center"/>
-            <PasswordBox Height="32" Width="288" Canvas.Left="102" Canvas.Top="71" FontSize="15" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="log_text" Height="31" Width="288" Canvas.Left="102" Canvas.Top="20" FontSize="16" VerticalContentAlignment="Center"/>
+            <PasswordBox x:Name="pass_text" Height="32" Width="288" Canvas.Left="102" Canvas.Top="71" FontSize="15" VerticalContentAlignment="Center"/>
             <Button Style="{DynamicResource Menu_Button}" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Войти" Canvas.Left="190" Canvas.Top="121" Click="Button_Click_1"/>
         </Canvas>
     </Grid>
