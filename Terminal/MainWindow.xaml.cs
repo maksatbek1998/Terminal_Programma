@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using Terminal.Folder_Class;
 using Terminal.Folder_Windows;
@@ -18,7 +10,7 @@ namespace Terminal
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     /*Program*/
-    public partial class MainWindow : Window
+    public partial class MainWindow :Window
     {
         public MainWindow()
         {

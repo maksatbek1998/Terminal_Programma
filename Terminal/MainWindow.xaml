@@ -39,6 +39,7 @@
                 <Button Style="{DynamicResource Round_KGZ}" Command="{Binding ToKG}" />
                 <Button Style="{DynamicResource Round_Rus}" Command="{Binding ToRU}"/>
                 <Button Style="{DynamicResource Round_Eng}" Command="{Binding ToEN}"/>
+                <Button Style="{DynamicResource Round_Eng}" Command="{Binding ToEN}"/>
                 
             </StackPanel>
         </Grid>
