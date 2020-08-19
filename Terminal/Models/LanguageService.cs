@@ -17,7 +17,7 @@ namespace Terminal.Models
             {
                 new Language{ LanguageRU="КАССА",LanguageKG="КАССА",LanguageEN="Cashier"},
                 new Language{ LanguageRU="ПРИЕМ К ВРАЧУ",LanguageKG="ДАРЫГЕР КАБЫЛДООСУ",LanguageEN=" Appointment to the doctor"},
-                new Language{ LanguageRU="ЛАБОРАТОРИЯ (A)",LanguageKG="ЛАБОРАТОРИЯ (А)",LanguageEN="№2 Laboratory (А)"},
+                new Language{ LanguageRU="ЛАБОРАТОРИЯ (A)",LanguageKG="ЛАБОРАТОРИЯ (А)",LanguageEN="Laboratory (А)"},
                 new Language{ LanguageRU="№1 НЕПРОПОТОЛОГ",LanguageKG="№1 НЕПРОПОТОЛОГ",LanguageEN="№1 Nepropotologist"},
                 new Language{ LanguageRU="№2 КАРДИОЛОГ",LanguageKG="№2 КАРДИОЛОГ",LanguageEN="№2 Cardiologist"},
                 new Language{ LanguageRU="№3 ОФТАЛЬМОЛОГ",LanguageKG="№3 ОФТАЛЬМОЛОГ",LanguageEN="№3 Ophthalmologist"},

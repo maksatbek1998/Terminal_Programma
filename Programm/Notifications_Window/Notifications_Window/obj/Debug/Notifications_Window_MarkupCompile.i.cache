@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Terminal\Programm\Notifications_Window\Notifications_Window\obj\Debug\
+D:\project\electron\Terminal_Programma\Programm\Notifications_Window\Notifications_Window\obj\Debug\
 Notifications_Window
 none
 false
 DEBUG;TRACE
-D:\Terminal\Programm\Notifications_Window\Notifications_Window\App.xaml
+D:\project\electron\Terminal_Programma\Programm\Notifications_Window\Notifications_Window\App.xaml
 21521798185
 
-10-1196399043
-13-1505183044
+10392405979
+141389964846
 MainWindow.xaml;ParolWindow.xaml;
 
-True
+False
 

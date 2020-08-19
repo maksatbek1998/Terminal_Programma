@@ -35,15 +35,17 @@ namespace Priomnyi
         {
             if (data.login(log_text.Text,pass_text.Password)==true) 
             {
-                
+
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Hide();
             }
             else 
             {
+                
                 log_text.Text = "";
                 pass_text.Password = "";
+                MessageBox.Show("Не верный логин или пароль");
             }
         }
     }
