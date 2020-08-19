@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Priomnyi.Class;
 
 namespace Priomnyi
 {
@@ -23,8 +24,12 @@ namespace Priomnyi
         public MainWindow()
         {
             InitializeComponent();
+            s_nap_btn.IsEnabled = false;
+            bez_nap_btn.IsEnabled = false;
+            delete_btn.IsEnabled = false;
+            golos_btn.IsEnabled = false;
         }
-
+        Treatment check = new Treatment();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var desctop = System.Windows.SystemParameters.WorkArea;
@@ -49,13 +54,61 @@ namespace Priomnyi
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            if (Next.IsChecked == true)
+            
+                Next.IsEnabled = false;
+                s_nap_btn.IsEnabled = true;
+                bez_nap_btn.IsEnabled = true;
+                delete_btn.IsEnabled = true;
+                golos_btn.IsEnabled = true;
+                //Next.Content = "Заверщить";
+                Label.Text= check.dalee();
+
+        }
+        private void golos_btn_Click(object sender, RoutedEventArgs e)
+        {
+            check.pozvat();
+        }
+
+        private void s_nap_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Next.IsEnabled = true;
+            s_nap_btn.IsEnabled = false;
+            bez_nap_btn.IsEnabled = false;
+            delete_btn.IsEnabled = false;
+            golos_btn.IsEnabled = false;
+            Label.Text = "";
+            check.s_nap();
+            check.delete_ocheredi();
+        }
+
+        private void bez_nap_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Next.IsEnabled = true;
+            s_nap_btn.IsEnabled = false;
+            bez_nap_btn.IsEnabled = false;
+            delete_btn.IsEnabled = false;
+            golos_btn.IsEnabled = false;
+            Label.Text = "";
+            check.bez_nap();
+            check.delete_ocheredi();
+        }
+
+        private void delete_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("удалить очер?", "удаление", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                Next.Content = "Заверщить";
+                Next.IsEnabled = true;
+                s_nap_btn.IsEnabled = false;
+                bez_nap_btn.IsEnabled = false;
+                delete_btn.IsEnabled = false;
+                golos_btn.IsEnabled = false;
+                Label.Text = "";
+                check.delete_ocheredi();
+                
             }
             else
             {
-                Next.Content = "Следующий";
+
             }
         }
     }
