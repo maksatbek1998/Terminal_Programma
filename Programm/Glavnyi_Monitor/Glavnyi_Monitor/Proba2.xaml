@@ -127,15 +127,15 @@
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
                                 <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" FontSize="70" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="A369" FontSize="70" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" FontSize="30" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

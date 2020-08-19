@@ -15,7 +15,18 @@
         <Grid.Effect>
             <DropShadowEffect BlurRadius="10" Direction="280" Opacity="1" ShadowDepth="2"/>
         </Grid.Effect>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="0">
+        <StackPanel Orientation="Horizontal" Width="330">
+            <StackPanel Width="250" >
+                <TextBlock x:Name="userText" Margin="5,10,0,0" 
+                           Foreground="#01B3A4"
+                           FontSize="15" Height="24" >
+                    Имя пользователя
+                </TextBlock>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" 
+                    VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="0">
+           
+            
             <Button Style="{DynamicResource Button_Remov_Row}" Padding="0,0,0,-12" Click="Button_Click_1">
                 <Image Source="Image/Minus.png"/>
             </Button>
@@ -23,8 +34,10 @@
                 <Image Source="Image/Close1.png"/>
             </Button>
         </StackPanel>
+
+        </StackPanel>
         <Grid Grid.Row="1">
-            <TextBlock x:Name="Label" Text="55555" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#01B3A4"/>
+            <TextBlock x:Name="Label" Text="" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#01B3A4"/>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel>
