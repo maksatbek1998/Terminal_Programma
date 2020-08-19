@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Terminal.Folder_Windows"
         mc:Ignorable="d"
-        Title="Sleep_Window" Height="200" Width="400" WindowStyle="None"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Sleep_Window" Height="200" Width="400" WindowStyle="None"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" AllowsTransparency="True">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
