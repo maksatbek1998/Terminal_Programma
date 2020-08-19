@@ -24,6 +24,8 @@ namespace Kassa
         public MainWindow()
         {
             InitializeComponent();
+            btn_2.IsEnabled = false;
+            btn_3.IsEnabled = false;
         }
         Data t = new Data();
         Treatment check = new Treatment();
@@ -47,20 +49,28 @@ namespace Kassa
             var desctop = System.Windows.SystemParameters.WorkArea;
             this.Left = desctop.Right - this.Width;
             this.Top = desctop.Bottom - this.Height;
+            userText.Text = ClassStatic.Name;
         }
         bool btn = true;
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (btn == true) 
-            { 
-                Label.Text = check.dalee(); 
-                btn_1.Content = "Завершить"; 
-                btn = false;   // bool для поведения кнопки
-            }
-            else 
+            if (btn == true)
             {
+                Label.Text = check.dalee();
+                if (Label.Text != "пусто")
+                {
+                    btn_2.IsEnabled = true;
+                    btn_3.IsEnabled = true;
+                    btn_1.Content = "Завершить";
+                    btn = false;   // bool для поведения кнопки }
+                }               
+            }
+            else
+            {
+                btn_2.IsEnabled = false;
+                btn_3.IsEnabled = false;
                 check.delete_table();
-                Label.Text = ""; 
+                Label.Text = "";
                 btn_1.Content = "Далее";
                 btn = true;   // bool для поведения кнопки
             }
@@ -68,22 +78,21 @@ namespace Kassa
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            check.pozvat();
+            if (Label.Text!="пусто") { check.pozvat(); }           
+            
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("удалить очер?", "удаление", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            if (Label.Text!="пусто") 
             {
-                Label.Text = "";
-                check.delete_ocheredi();
-                btn_1.Content = "Далее";
-                btn = true;            // bool для поведения кнопки
-            }
-            else
-            {
-
-            }
-            
+                if (MessageBox.Show("удалить очер?", "удаление", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    Label.Text = "";
+                    check.delete_ocheredi();
+                    btn_1.Content = "Далее";
+                    btn = true;            // bool для поведения кнопки
+                }
+            }                
         }
     }
 }

@@ -15,6 +15,15 @@
         <Grid.Effect>
             <DropShadowEffect BlurRadius="10" Direction="280" Opacity="1" ShadowDepth="2"/>
         </Grid.Effect>
+        <StackPanel Orientation="Horizontal" Width="430">
+            <StackPanel Width="350" >
+                <TextBlock x:Name="userText" Margin="5,10,0,0" 
+                           Foreground="#01B3A4"
+                           FontSize="15" Height="24" >
+                    Имя пользователя
+                </TextBlock>
+            </StackPanel>
+        
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="0">
             <Button Style="{DynamicResource Button_Remov_Row}" Padding="0,0,0,-12" Click="Button_Click_1">
                 <Image Source="Image/Minus.png"/>
@@ -23,13 +32,14 @@
                 <Image Source="Image/Close1.png"/>
             </Button>
         </StackPanel>
+        </StackPanel>
         <Grid Grid.Row="1">
-            <TextBlock Text="777" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#01B3A4" FontWeight="Bold" Margin="0,-15,0,0"/>
+            <TextBlock x:Name="Label" Text="" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#01B3A4" FontWeight="Bold" Margin="0,-15,0,0"/>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <ToggleButton x:Name="Next" Width="200" Margin="5" Height="40" Content="Следующий" Style="{DynamicResource Togle_Button}" Click="Next_Click"/>
-                <Button Style="{DynamicResource Menu_Button}" Height="40" Width="200">
+                <Button x:Name="zvonok" Style="{DynamicResource Menu_Button}" Height="40" Width="200" Click="zvonok_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Image/pozvat.png" Margin="-20,0,15,0"/>
                         <TextBlock Text="Позвать" VerticalAlignment="Center" FontSize="20"/>

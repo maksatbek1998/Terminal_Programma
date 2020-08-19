@@ -16,17 +16,30 @@
             <RowDefinition Height="160"/>
             <RowDefinition Height="125"/>
         </Grid.RowDefinitions>
-       
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="0">
-            <Button Style="{DynamicResource Button_Remov_Row}" Padding="0,0,0,-12" Click="Button_Click_1">
-                <Image Source="Image/Minus.png"/>
-            </Button>
-            <Button Style="{DynamicResource Button_Remov_Row}" Click="Button_Click">
-                <Image Source="Image/Close1.png"/>
-            </Button>
+
+        <StackPanel Orientation="Horizontal" Width="330">
+            <StackPanel Width="250" >
+                <TextBlock x:Name="userText" Margin="5,10,0,0" 
+                           Foreground="#01B3A4"
+                           FontSize="15" Height="24" >
+                    Имя пользователя
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                    VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="0">
+
+
+                <Button Style="{DynamicResource Button_Remov_Row}" Padding="0,0,0,-12" Click="Button_Click_1">
+                    <Image Source="Image/Minus.png"/>
+                </Button>
+                <Button Style="{DynamicResource Button_Remov_Row}" Click="Button_Click">
+                    <Image Source="Image/Close1.png"/>
+                </Button>
+            </StackPanel>
+
         </StackPanel>
         <Grid Grid.Row="1">
-            <TextBlock x:Name="Label" Text="55555" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#01B3A4"/>
+            <TextBlock x:Name="Label" Text="" FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#01B3A4"/>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel>

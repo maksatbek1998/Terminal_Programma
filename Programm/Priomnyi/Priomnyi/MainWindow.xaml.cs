@@ -35,6 +35,7 @@ namespace Priomnyi
             var desctop = System.Windows.SystemParameters.WorkArea;
             this.Left = desctop.Right - this.Width;
             this.Top = desctop.Bottom - this.Height;
+            userText.Text = ClassStatic.Name;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -51,18 +52,24 @@ namespace Priomnyi
         {
             this.DragMove();
         }
-
+        
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             
+            Label.Text = check.dalee();
+            if (Label.Text != "пусто")
+                {
                 Next.IsEnabled = false;
                 s_nap_btn.IsEnabled = true;
                 bez_nap_btn.IsEnabled = true;
                 delete_btn.IsEnabled = true;
                 golos_btn.IsEnabled = true;
-                //Next.Content = "Заверщить";
-                Label.Text= check.dalee();
-
+                }
+            else 
+            {
+                Next.IsChecked = false;
+            }              
+           
         }
         private void golos_btn_Click(object sender, RoutedEventArgs e)
         {

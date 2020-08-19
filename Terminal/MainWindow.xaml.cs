@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Shapes;
 using System.Windows.Threading;
+using Terminal.Folder_Class;
 using Terminal.Folder_Windows;
 
 namespace Terminal
@@ -17,7 +10,7 @@ namespace Terminal
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     /*Program*/
-    public partial class MainWindow : Window
+    public partial class MainWindow :Window
     {
         public MainWindow()
         {
@@ -28,7 +21,9 @@ namespace Terminal
             timer.Start();
             Time_Strart();
         }
-        void Time(object sender, EventArgs e)
+        dbConnect dbCon = new dbConnect();
+        DateTime thisDay = DateTime.Today;
+             void Time(object sender, EventArgs e)
         {
             DateTime dateTime = DateTime.Now;
             Data.Text = dateTime.ToLongDateString();
@@ -65,9 +60,11 @@ namespace Terminal
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            kassa.IsEnabled = false;
+           kassa.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Касса", "27", "20.10.2020_27");
+            string numberOchered = dbCon.RegistrOchered("К");
+            For_print for_Print = new For_print("Касса", numberOchered, 
+                thisDay.ToString("dd.MM.yyyy")+"_"+"К_"+numberOchered);
             for_Print.Check_Print();
             kassa.IsEnabled = true;
         }
@@ -76,7 +73,9 @@ namespace Terminal
         {
             Lab_A.IsEnabled = false;  
             Zaderjka();
-            For_print for_Print = new For_print("Лаборатория(А)", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("ЛА");
+            For_print for_Print = new For_print("Лаборатория(А)", numberOchered,
+                 thisDay.ToString("dd.MM.yyyy") + "_" + "ЛА_" + numberOchered);
             for_Print.Check_Print();
             Lab_A.IsEnabled = true;         
         }
@@ -85,7 +84,9 @@ namespace Terminal
         {
             Lab_B.IsEnabled = false;
             Zaderjka();
-            For_print for_Print = new For_print("Лаборатория(Б)", "27", "qwer");
+            string numberOchered = dbCon.RegistrOchered("ЛБ");
+            For_print for_Print = new For_print("Лаборатория(Б)", numberOchered,
+                thisDay.ToString("dd.MM.yyyy") + "_" + "ЛБ" + numberOchered);
             for_Print.Check_Print();
             Lab_B.IsEnabled = true;
         }
