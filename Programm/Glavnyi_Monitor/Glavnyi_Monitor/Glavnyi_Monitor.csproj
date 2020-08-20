@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\c#\MySQL\MySql.Data.DLL</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,10 +59,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\RealayCommand.cs" />
+    <Compile Include="ViewModels\VIewModelsDiraction.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="All_Clasess\dbConnect.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -73,6 +80,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Direction.cs" />
+    <Compile Include="Models\DirectionService.cs" />
     <Compile Include="Proba2.xaml.cs">
       <DependentUpon>Proba2.xaml</DependentUpon>
     </Compile>
@@ -113,5 +122,6 @@
   <ItemGroup>
     <Resource Include="Image\Person.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

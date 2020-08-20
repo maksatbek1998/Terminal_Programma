@@ -21,13 +21,23 @@ namespace Terminal
             timer.Start();
             Time_Strart();
         }
-        dbConnect dbCon = new dbConnect();
+        dbConnect dbCon;
         DateTime thisDay = DateTime.Today;
              void Time(object sender, EventArgs e)
         {
             DateTime dateTime = DateTime.Now;
+            var dateTime1 = DateTime.Now.TimeOfDay;
             Data.Text = dateTime.ToLongDateString();
-            Hours.Text = dateTime.ToShortTimeString();
+            var time1 = new TimeSpan(00,00,0);
+            var time2 = new TimeSpan(10,00,0);
+            if (time1>dateTime1 && time2>dateTime1)
+            {
+                Hours.Text ="0"+dateTime.ToShortTimeString();
+            }
+            else
+            {
+                Hours.Text = dateTime.ToShortTimeString();
+            }
         }
         int Metka_Id = 0;
         void Time_Metka(object sender, EventArgs e)
@@ -56,38 +66,57 @@ namespace Terminal
         {
             Window1 window1 = new Window1();
             window1.ShowDialog();
+            this.Hide();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
            kassa.IsEnabled = false;
             Zaderjka();
-            string numberOchered = dbCon.RegistrOchered("К");
-            For_print for_Print = new For_print("Касса", numberOchered, 
-                thisDay.ToString("dd.MM.yyyy")+"_"+"К_"+numberOchered);
-            for_Print.Check_Print();
+            // string numberOchered = dbCon.RegistrOchered("К");
+            dbCon = new dbConnect();
+            dbCon.sendData += (x, y) =>
+            {
+                For_print for_Print = new For_print("Касса", "К" + x,
+                    y.ToString("dd.MM.yyyy") + "_" + "К_" + x);
+                for_Print.Check_Print();
+               
+            };
+            dbCon.RegistrOchered("К");
             kassa.IsEnabled = true;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Lab_A.IsEnabled = false;  
+            Lab_A.IsEnabled = false;
             Zaderjka();
-            string numberOchered = dbCon.RegistrOchered("ЛА");
-            For_print for_Print = new For_print("Лаборатория(А)", numberOchered,
-                 thisDay.ToString("dd.MM.yyyy") + "_" + "ЛА_" + numberOchered);
-            for_Print.Check_Print();
-            Lab_A.IsEnabled = true;         
+            //string numberOchered = dbCon.RegistrOchered("ЛА");
+            dbCon = new dbConnect();
+            dbCon.sendData += (x, y) =>
+            {
+                For_print for_Print = new For_print("Лаборатория(А)", "ЛА" + x,
+                 y.ToString("dd.MM.yyyy") + "_" + "ЛА_" + x);
+                for_Print.Check_Print();
+                
+            };
+            dbCon.RegistrOchered("ЛА");
+            
+            Lab_A.IsEnabled = true;
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             Lab_B.IsEnabled = false;
             Zaderjka();
-            string numberOchered = dbCon.RegistrOchered("ЛБ");
-            For_print for_Print = new For_print("Лаборатория(Б)", numberOchered,
-                thisDay.ToString("dd.MM.yyyy") + "_" + "ЛБ" + numberOchered);
-            for_Print.Check_Print();
+            dbCon = new dbConnect();
+            dbCon.sendData += (x, y) =>
+            {
+                For_print for_Print = new For_print("Лаборатория(Б)", "ЛБ" + x,
+                y.ToString("dd.MM.yyyy") + "_" + "ЛБ_" + x);
+                for_Print.Check_Print();
+                
+            };
+            dbCon.RegistrOchered("ЛБ");
             Lab_B.IsEnabled = true;
         }
         public void Zaderjka()
