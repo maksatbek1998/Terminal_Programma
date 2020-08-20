@@ -16,7 +16,7 @@ namespace Terminal.Folder_Windows
         {
             InitializeComponent();
         }
-
+    
         DateTime thisDay = DateTime.Today;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
