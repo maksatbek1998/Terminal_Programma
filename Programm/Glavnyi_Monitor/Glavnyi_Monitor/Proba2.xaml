@@ -38,13 +38,29 @@
             <Grid Grid.Row="0" Grid.ColumnSpan="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock x:Name="Date" Text="14.09.2020" Foreground="#FF01B5A6" FontSize="40"/>
-                    <TextBlock x:Name="Time" Text="12:00" Foreground="#FF01B5A6" FontSize="40" Margin="20,0,0,0"/>
+                    <Grid  Margin="20,0,0,0" Height="60" Width="110">
+                        <TextBlock x:Name="Time" Text="12:00" Foreground="#FF01B5A6" FontSize="40"/>
+                        <Rectangle Width="10" Height="60" Margin="42,0" HorizontalAlignment="Left">
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="OpacityBrush" Color="White" />
+                            </Rectangle.Fill>
+                            <Rectangle.Triggers>
+                                <EventTrigger RoutedEvent="Rectangle.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="OpacityBrush" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5" AutoReverse="True" RepeatBehavior="Forever" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Rectangle.Triggers>
+                        </Rectangle>
+                    </Grid>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="0" Margin="5,0,3,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="57*"/>
-                    <ColumnDefinition Width="42*"/>
+                    <ColumnDefinition Width="52*"/>
+                    <ColumnDefinition Width="45*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -62,7 +78,7 @@
                     <Border Grid.Row="1" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                НЕВРОПОТОЛОГ
                             </TextBlock>
                         </StackPanel>
@@ -70,7 +86,7 @@
                     <Border Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                КАРДИОЛОГ
                             </TextBlock>
                         </StackPanel>
@@ -78,15 +94,15 @@
                     <Border Grid.Row="3" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
-                               ОФТАЛМОЛОГ
+                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
+                               ОФТАЛЬМОЛОГ
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="4" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                 ГЕПАТОЛОГ
                                 <LineBreak/>
                                 ГАСТРОЭНТРОЛОГ
@@ -96,7 +112,7 @@
                     <Border Grid.Row="5" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                НЕФРОЛОГ
                             </TextBlock>
                         </StackPanel>
@@ -104,7 +120,7 @@
                     <Border Grid.Row="6" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                ГЕМАТОЛОГ
                             </TextBlock>
                         </StackPanel>
@@ -121,101 +137,284 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Background="#01B5A6">
-                        <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="White" HorizontalAlignment="Center" Text="На очереде"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="White" HorizontalAlignment="Center" 
+                                   Text="В очереди"/>
                     </Grid>
                     <Border Grid.Row="1" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
-                        <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="2,0,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="" FontSize="70" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=V1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="P999"  x:Name="V1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="A369" FontSize="70" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=V2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="P999" FontSize="38"
+                                           x:Name="V2"
+                                           FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"    Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=V3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="P999" x:Name="V3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="2" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=R1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="R1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=R2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="R2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=R3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="R3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="3" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=O1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="O1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12" Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=O2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="O2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=O3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="O3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="4" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12" Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=E1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="E1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12" Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=E2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="E2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=E3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="E3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="5" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=F1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="F1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=F2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="F2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=F3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="F3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="6" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=M1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="M1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12" Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=M2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="M2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=M3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="M3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -223,8 +422,8 @@
             </Grid>
             <Grid Grid.Row="1" Grid.Column="1" Margin="3,0,5,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="57*"/>
-                    <ColumnDefinition Width="42*"/>
+                    <ColumnDefinition Width="52*"/>
+                    <ColumnDefinition Width="45*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -242,7 +441,7 @@
                     <Border Grid.Row="1" BorderThickness="1,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
                                ПЕДИАТР
                             </TextBlock>
                         </StackPanel>
@@ -250,7 +449,7 @@
                     <Border Grid.Row="2" BorderThickness="1,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                ЭНДОКРИНОЛОГ
                             </TextBlock>
                         </StackPanel>
@@ -258,7 +457,7 @@
                     <Border Grid.Row="3" BorderThickness="1,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
                                АЛЛЕРГОЛОГ
                             </TextBlock>
                         </StackPanel>
@@ -266,7 +465,7 @@
                     <Border Grid.Row="4" BorderThickness="1,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                               ЛОР
                             </TextBlock>
                         </StackPanel>
@@ -274,7 +473,7 @@
                     <Border Grid.Row="5" BorderThickness="1,1,0,1" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
                             <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap">
+                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                СТОМАТОЛОГ
                             </TextBlock>
                         </StackPanel>
@@ -291,85 +490,238 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Background="#01B5A6">
-                        <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="White" HorizontalAlignment="Center" Text="На очереде"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="White" HorizontalAlignment="Center" 
+                                   Text="В очереди"/>
                     </Grid>
                     <Border Grid.Row="1" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
-                        <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="2,0,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=P1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="P1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=P2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="P2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=P3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="P3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="2" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=D1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="D1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=D2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="D2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=D3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="D3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="3" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=A1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="A1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=A2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="A2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=A3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="A3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="4" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=L1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="L1"
+                                           FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=L2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock  x:Name="L2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=L3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="L3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="5" BorderThickness="0,1,1,1" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                             <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=C1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="C1"
+                                           FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"  Fill="#FF01B5A6" />
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12" Fill="#FF01B5A6" >
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=C2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="C2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
-                                <Ellipse Height="15" Width="15"   Fill="#FF01B5A6"/>
-                                <TextBlock Text="P999" FontSize="30" FontWeight="Medium" Foreground="Red"/>
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=C3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="C3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

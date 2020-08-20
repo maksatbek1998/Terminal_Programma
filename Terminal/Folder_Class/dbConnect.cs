@@ -1,11 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Terminal.Folder_Class
 {
@@ -13,11 +8,11 @@ namespace Terminal.Folder_Class
     {
 
 
-        public MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Initial Catalog='medlinedb';username=root;password=123456;CharSet=utf8;");
+        public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.26; port=3306;Initial Catalog='medlinedb';username=terminal;password=123456;CharSet=utf8;");
         
         public delegate void DisplaySourse(DataTable db);
         public event DisplaySourse eventDysplay;
-        public delegate void SendData(string x,string y);
+        public delegate void SendData(string x,DateTime y);
         public event SendData sendData;
        
         
@@ -46,11 +41,13 @@ namespace Terminal.Folder_Class
 
         }
         
-        public string RegistrOchered(string suf)
+        public void RegistrOchered(string suf)
         {
             string categoryID = "";
             string lastnumber = "";
             string ocheretID = "";
+            string curDate = "";
+            string curDate2;
              categoryID = DisplayReturn("SELECT id FROM categories c WHERE c.category_suffix = '"+suf+"'");
             /*eventDysplay += data =>
             {
@@ -65,16 +62,25 @@ namespace Terminal.Folder_Class
             {
                 Registr("INSERT INTO queue_last_numbering(category_id,last_number)" +
                     "values('"+ categoryID + "','1') ");
+                curDate2 = DisplayReturn("SELECT q.updated_at FROM queue_last_numbering q WHERE q.category_id='"+ categoryID + "' AND DATE(q.created_at) = CURDATE()");
                 lastnumber = "1";
+                sendData(lastnumber, Convert.ToDateTime( curDate2));
 
             }
             else
             {
                 Registr("UPDATE queue_last_numbering " +
                     "SET last_number=(last_number+1) WHERE id = '" + ocheretID + "'");
-                lastnumber = DisplayReturn( "SELECT q.last_number FROM queue_last_numbering q " +
+                eventDysplay += db =>
+                {
+                    lastnumber = db.Rows[0][0].ToString();
+                    curDate = db.Rows[0][1].ToString();
+                };
+
+                SoursData("SELECT q.last_number,q.updated_at FROM queue_last_numbering q " +
                 "WHERE DATE(q.created_at) = CURDATE() AND " +
                 "q.category_id ='" + categoryID + "' ");
+                sendData(lastnumber, Convert.ToDateTime( curDate));
                 
             }
 
@@ -86,10 +92,11 @@ namespace Terminal.Folder_Class
             }
             else
             {
+                
                 Registr("INSERT INTO queue_reception(category_id,queue_number)" +
                     "values('" + categoryID + "','" + lastnumber + "') ");
             }
-            return lastnumber;
+           
         }
         public string DisplayReturn(string s)
         {

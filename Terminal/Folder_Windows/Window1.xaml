@@ -19,7 +19,7 @@
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center" 
                    FontSize="50" FontWeight="DemiBold" Foreground="#FF01B1A2"/>
-        <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Orientation="Vertical">
+        <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Orientation="Vertical" Height="650">
             <Button x:Name="Nevropotolog" Style="{DynamicResource Menu_Button1}" 
                     Content="{Binding Nepropotologist}" Click="Nevropotolog_Click"/>
             <Button x:Name="Kardiolog" Style="{DynamicResource Menu_Button1}" 
