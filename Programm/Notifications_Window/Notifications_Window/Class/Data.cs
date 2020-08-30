@@ -11,7 +11,10 @@ namespace Notifications_Window.Class
 {
     class Data
     {
-        MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Initial Catalog='medlinedb';username=root;password=;CharSet=utf8;");
+        //MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Initial Catalog='medlinedb';username=root;password=123456;CharSet=utf8;");
+        //public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.26; port=3306;Initial Catalog='medlinedb';username=admin;password=server_terminal_2019#;CharSet=utf8;");
+        public MySqlConnection connection = new MySqlConnection("datasource=10.10.10.123; port=3306;Initial Catalog='medlinedb';username=terminal;password=123456;CharSet=utf8;");
+
         public delegate void SendData(DataTable data);
         public event SendData del;
 
@@ -54,30 +57,16 @@ namespace Notifications_Window.Class
             connection.Close();
             return value;
         }
-        /*public string[] DisplayReturns(string s)
-        {
-            connection.Open();
-            string sql = s;
-            string[] value = new string[4];
-            MySqlCommand command = new MySqlCommand(sql, connection);
-            MySqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                value[0] = reader[0].ToString();
-                value[1] = reader[1].ToString();
-                value[2] = reader[2].ToString();
-                //value[3] = reader[3].ToString();
-            }
-            connection.Close();
-            return value;
-        }*/
-
+       
         public bool login(string log, string pass)
         {
             connection.Open();
 
-            string sql = "SELECT * FROM users WHERE user_login='" + log + "' and user_password='" + ComputeSha256Hash(pass) + "'";
-            string[] value = new string[6];
+            string sql = "SELECT u.id,c.id,u.user_name,u.user_login,u.user_password, c.category_suffix FROM users u JOIN " +
+                "categories c ON u.user_category_id = c.id " +
+                "WHERE u.user_login = '" + log + "' " +
+                "AND u.user_password = '" + ComputeSha256Hash(pass) + "'";
+            string[] value = new string[7];
             del += db =>
             {
                 if (db.Rows.Count > 0)
@@ -87,11 +76,12 @@ namespace Notifications_Window.Class
                     value[3] = db.Rows[0][2].ToString();
                     value[4] = db.Rows[0][3].ToString();
                     value[5] = db.Rows[0][4].ToString();
+                    value[6] = db.Rows[0][5].ToString();
                 }
 
             };
             SoursData(sql);
-            if (value[1] != null&&(value[2]!="12"&& value[2] != "13" ))
+            if (value[1] != null && value[6] != "ЛБ" && value[6] != "ЛА")
             {
                 ClassStatic.Id = value[1];
                 ClassStatic.Cat_Id = value[2];
@@ -101,6 +91,7 @@ namespace Notifications_Window.Class
             else
                 return false;
         }
+
 
         static string ComputeSha256Hash(string rawData)
         {

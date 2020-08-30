@@ -11,7 +11,8 @@ namespace Registrasia.ClassFolder
 {
     class DBconnection
     {
-        public MySqlConnection connection = new MySqlConnection("datasource=Localhost; port=3306;Initial Catalog='medlinedb';username=root;password=123456;CharSet=utf8;");
+        //public MySqlConnection connection = new MySqlConnection("datasource=Localhost; port=3306;Initial Catalog='medlinedb';username=root;password=123456;CharSet=utf8;");
+        public MySqlConnection connection = new MySqlConnection("datasource=10.10.10.123; port=3306;Initial Catalog='medlinedb';username=terminal;password=123456;CharSet=utf8;");
         public delegate void DisplaySourse(DataTable db);
         public event DisplaySourse eventDysplay; 
         public delegate void DisplaySourse2(string[] a);

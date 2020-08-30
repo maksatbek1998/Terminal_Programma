@@ -28,7 +28,7 @@ namespace Terminal.Folder_Windows
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(2);
+            timer.Interval = TimeSpan.FromSeconds(3);
             timer.Tick += Time;
             timer.Start();
         }

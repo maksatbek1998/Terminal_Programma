@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Proba2" Height="700" Width="1200" WindowStyle="None" AllowsTransparency="True" WindowState="Maximized">
     <Window.Resources>
-        <Storyboard x:Key="Kalomka_Animation"  FillBehavior="HoldEnd" RepeatBehavior="00:00:24">
+        <Storyboard x:Key="Kalomka_Animation"  RepeatBehavior="Forever">
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
@@ -19,11 +19,19 @@
                 <DiscreteObjectKeyFrame KeyTime="0:0:1.6" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Key="TextBloc_Animated" FillBehavior="HoldEnd" RepeatBehavior="00:00:24">
-            <ColorAnimation Storyboard.TargetName="buttonColor" Storyboard.TargetProperty="Color" From="{Binding ElementName=buttonColor, Path=Color}"
+        <Storyboard x:Key="TextBloc_Animated"  RepeatBehavior="Forever">
+            <ColorAnimation Storyboard.TargetName="buttonColor" 
+                            Storyboard.TargetProperty="Color" 
+                            From="{Binding ElementName=buttonColor, Path=Color}"
                                                  To="#01B5A6" AutoReverse="True"  Duration="0:0:0.8" />
         </Storyboard>
     </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Kalomka_Animation}"/>
+            <BeginStoryboard Storyboard="{StaticResource TextBloc_Animated}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid Margin="5,0,5,7">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -59,8 +67,8 @@
             </Grid>
             <Grid Grid.Row="1" Grid.Column="0" Margin="5,0,3,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="52*"/>
-                    <ColumnDefinition Width="45*"/>
+                    <ColumnDefinition Width="55*"/>
+                    <ColumnDefinition Width="42*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -71,38 +79,39 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Background="#01B5A6">
-                        <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="White" HorizontalAlignment="Center" Text="Направления"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="White" HorizontalAlignment="Center" Text="Направления"/>
                     </Grid>
                     <Border Grid.Row="1" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Image  Height="70" Width="55" Margin="0,0,10,0" Source="Image/Nevropotolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                НЕВРОПОТОЛОГ
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Image  Height="70" Width="55" Margin="0,0,10,0" Source="Image/Kardiolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                КАРДИОЛОГ
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="3" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
+                            <Image  Height="70" Width="55" Margin="0,0,10,0" Source="Image/Oftalmolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
                                ОФТАЛЬМОЛОГ
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="4" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Image  Height="70" Width="55" Margin="0,0,10,0" Source="Image/Gepatolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                 ГЕПАТОЛОГ
                                 <LineBreak/>
                                 ГАСТРОЭНТРОЛОГ
@@ -111,17 +120,25 @@
                     </Border>
                     <Border Grid.Row="5" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Image  Height="70" Width="55" Margin="0,0,10,0" Source="Image/Nefrolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                НЕФРОЛОГ
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="6" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Image Height="70" Width="55" Margin="0,0,10,0" Source="Image/gematolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                ГЕМАТОЛОГ
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="7" BorderThickness="0,1,0,0" BorderBrush="#01B5A6">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="65" Width="50" Margin="0,0,10,0" Source="Image/EKG.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                               ЭКГ
                             </TextBlock>
                         </StackPanel>
                     </Border>
@@ -129,15 +146,16 @@
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="69*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="69*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Background="#01B5A6">
-                        <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="White" HorizontalAlignment="Center" 
+                        <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="White" HorizontalAlignment="Center" 
                                    Text="В очереди"/>
                     </Grid>
                     <Border Grid.Row="1" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
@@ -154,7 +172,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="P999"  x:Name="V1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text=""  x:Name="V1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
@@ -168,7 +186,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="P999" FontSize="38"
+                                <TextBlock Text="" FontSize="51"
                                            x:Name="V2"
                                            FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
@@ -184,7 +202,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="P999" x:Name="V3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="V3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -202,7 +220,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="R1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="R1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -216,7 +234,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="R2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="R2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
@@ -230,7 +248,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="R3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="R3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -248,7 +266,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="O1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="O1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12" Fill="#FF01B5A6">
@@ -262,7 +280,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="O2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="O2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -276,7 +294,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="O3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="O3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -294,7 +312,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="E1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="E1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12" Fill="#FF01B5A6">
@@ -308,7 +326,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="E2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="E2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
@@ -322,7 +340,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="E3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="E3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -340,7 +358,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="F1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="F1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -354,7 +372,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="F2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="F2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -368,7 +386,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="F3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="F3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -386,7 +404,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="M1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="M1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12" Fill="#FF01B5A6">
@@ -400,7 +418,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text=""  x:Name="M2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text=""  x:Name="M2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
@@ -414,7 +432,53 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text=""  x:Name="M3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text=""  x:Name="M3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="7" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=EKG1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="EKG1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12" Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=EKG2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="EKG2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=EKG3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="EKG3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -422,8 +486,8 @@
             </Grid>
             <Grid Grid.Row="1" Grid.Column="1" Margin="3,0,5,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="52*"/>
-                    <ColumnDefinition Width="45*"/>
+                    <ColumnDefinition Width="55*"/>
+                    <ColumnDefinition Width="42*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -434,47 +498,64 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Background="#01B5A6">
-                        <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="White" HorizontalAlignment="Center" Text="Направления"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="White" HorizontalAlignment="Center" Text="Направления"/>
                     </Grid>
                     <Border Grid.Row="1" BorderThickness="1,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
+                            <Image  Height="60" Width="50" Margin="5,0,10,0" Source="Image/pediatr.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
                                ПЕДИАТР
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="2" BorderThickness="1,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Image  Height="70" Width="60" Margin="0,0,10,0" Source="Image/endokrinolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                ЭНДОКРИНОЛОГ
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="3" BorderThickness="1,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35px"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
+                            <Image  Height="65" Width="55" Margin="0,0,10,0" Source="Image/Allergiolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center"  TextWrapping="Wrap">
                                АЛЛЕРГОЛОГ
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="4" BorderThickness="1,1,0,0" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Image  Height="70" Width="60" Margin="0,0,10,0" Source="Image/Lor.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                               ЛОР
                             </TextBlock>
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="5" BorderThickness="1,1,0,1" BorderBrush="#01B5A6">
                         <StackPanel Orientation="Horizontal">
-                            <Image Height="70" Width="60" Source="Image/Person.png"/>
-                            <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                            <Image  Height="60" Width="50" Margin="0,0,10,0" Source="Image/Stomatolog.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
                                СТОМАТОЛОГ
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="6" BorderThickness="1,0,0,1" BorderBrush="#01B5A6">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="70" Width="60" Margin="0,0,10,0" Source="Image/Laboratory.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                               ЛАБОРАТОРИЯ А
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="7" BorderThickness="1,0,0,1" BorderBrush="#01B5A6">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="70" Width="60" Margin="0,0,10,0" Source="Image/Laboratory.png"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="#01B5A6" HorizontalAlignment="Center" TextWrapping="Wrap">
+                               ЛАБОРАТОРИЯ Б
                             </TextBlock>
                         </StackPanel>
                     </Border>
@@ -482,15 +563,16 @@
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="69*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="69*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Background="#01B5A6">
-                        <TextBlock VerticalAlignment="Center" FontSize="35"  Foreground="White" HorizontalAlignment="Center" 
+                        <TextBlock VerticalAlignment="Center" FontSize="40"  Foreground="White" HorizontalAlignment="Center" 
                                    Text="В очереди"/>
                     </Grid>
                     <Border Grid.Row="1" BorderThickness="0,1,1,0" BorderBrush="#01B5A6">
@@ -507,7 +589,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text=""  x:Name="P1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text=""  x:Name="P1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -521,7 +603,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="P2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="P2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
@@ -535,7 +617,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="P3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="P3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -553,7 +635,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="D1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="D1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -567,7 +649,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="D2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="D2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -581,7 +663,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="D3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="D3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -599,7 +681,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="A1" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="A1" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -613,7 +695,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="A2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="A2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -627,7 +709,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="A3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="A3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -646,7 +728,7 @@
                                     </Ellipse.Style>
                                 </Ellipse>
                                 <TextBlock Text="" x:Name="L1"
-                                           FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                           FontSize="48" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -660,7 +742,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock  x:Name="L2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock  x:Name="L2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
@@ -674,7 +756,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text="" x:Name="L3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text="" x:Name="L3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -693,7 +775,7 @@
                                     </Ellipse.Style>
                                 </Ellipse>
                                 <TextBlock Text="" x:Name="C1"
-                                           FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                           FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12" Fill="#FF01B5A6" >
@@ -707,7 +789,7 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text=""  x:Name="C2" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text=""  x:Name="C2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
                                 <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
@@ -721,7 +803,101 @@
                                         </Style>
                                     </Ellipse.Style>
                                 </Ellipse>
-                                <TextBlock Text=""  x:Name="C3" FontSize="38" FontWeight="Medium" Foreground="Red"/>
+                                <TextBlock Text=""  x:Name="C3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="6" BorderThickness="0,0,1,1" BorderBrush="#01B5A6">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=LA1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="LA1"
+                                           FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12" Fill="#FF01B5A6" >
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=LA2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="LA2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=LA3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="LA3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="7" BorderThickness="0,0,1,1" BorderBrush="#01B5A6">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12"  Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=LB1,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text="" x:Name="LB1"
+                                           FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12" Fill="#FF01B5A6" >
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=LB2,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="LB2" FontSize="51" FontWeight="Medium" Foreground="Red"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
+                                <Ellipse Height="12" Width="12"   Fill="#FF01B5A6">
+                                    <Ellipse.Style>
+                                        <Style  TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=LB3,Path=Text.Length}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Text=""  x:Name="LB3" FontSize="51" FontWeight="Medium" Foreground="Red"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -734,11 +910,16 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Viewbox  Height="75" Grid.Column="0" HorizontalAlignment="Stretch" Margin="30,0,0,0">
-                    <TextBlock FontSize="10" VerticalAlignment="Center"   Foreground="White" HorizontalAlignment="Center" MaxWidth="1000" Text="№2 КАРДИОЛОГ" TextWrapping="Wrap" Grid.Column="0"></TextBlock>
+                    <TextBlock FontSize="10" VerticalAlignment="Center"  
+                               x:Name="textbox_Napr"
+                               Foreground="White" HorizontalAlignment="Center" 
+                               MaxWidth="1000" Text="КАРДИОЛОГ" TextWrapping="Wrap" Grid.Column="0"></TextBlock>
                 </Viewbox>
                 <Grid Height="Auto" HorizontalAlignment="Right" Width="Auto" Grid.Column="1">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock FontSize="70" VerticalAlignment="Center" Text="P777" HorizontalAlignment="Right" >
+                    <StackPanel Orientation="Horizontal" x:Name="Colomka_TextBlock" Visibility="Hidden">
+                        <TextBlock FontSize="70" VerticalAlignment="Center" 
+                                   x:Name="textbox_Naumber"
+                                   Text="P777" HorizontalAlignment="Right" >
                             <TextBlock.Foreground>
                                 <SolidColorBrush x:Name="buttonColor" Color="White" />
                             </TextBlock.Foreground>
@@ -747,6 +928,15 @@
                             <Path x:Name="path2" Stroke="White" StrokeThickness="5"  Stretch="Fill" Data="M250,250 A1,100,0,0,0,250,0" Margin="58.667,30,28.959,29.667" Visibility="Collapsed" />
                             <Path x:Name="path1" Stroke="White" StrokeThickness="5"  Stretch="Fill" Data="M250,250 A1,100,0,0,0,250,0" Margin="58.667,38.5,37.75,38" Visibility="Collapsed" />
                             <Path x:Name="path" Stroke="White" StrokeThickness="5"  Stretch="Fill" Data="M250,250 A1,100,0,0,0,250,0" Margin="58.667,48,46.667,47.328" Visibility="Collapsed"/>
+                            <Image Source="Image/Kol.png" Height="100" Width="100" Margin="-7.334,10,27.333,10" />
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="153,0,0,0" x:Name="Colomka" Visibility="Visible">
+
+                        <Grid Width="120" Height="120" Margin="20,-15,50,0" >
+                            <Path  Stroke="White" StrokeThickness="5"  Stretch="Fill" Data="M250,250 A1,100,0,0,0,250,0" Margin="58.667,30,28.959,29.667" />
+                            <Path  Stroke="White" StrokeThickness="5"  Stretch="Fill" Data="M250,250 A1,100,0,0,0,250,0" Margin="58.667,38.5,37.75,38"  />
+                            <Path  Stroke="White" StrokeThickness="5"  Stretch="Fill" Data="M250,250 A1,100,0,0,0,250,0" Margin="58.667,48,46.667,47.328" />
                             <Image Source="Image/Kol.png" Height="100" Width="100" Margin="-7.334,10,27.333,10" />
                         </Grid>
                     </StackPanel>

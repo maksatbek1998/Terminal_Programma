@@ -38,7 +38,8 @@
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <ToggleButton x:Name="Next" Width="200" Margin="5" Height="40" Content="Следующий" Style="{DynamicResource Togle_Button}" Click="Next_Click"/>
+                <ToggleButton x:Name="Next" Width="200" Margin="5" Height="40"
+                              Content="Следующий" Style="{DynamicResource Togle_Button}" Click="Next_Click"/>
                 <Button x:Name="zvonok" Style="{DynamicResource Menu_Button}" Height="40" Width="200" Click="zvonok_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Image/pozvat.png" Margin="-20,0,15,0"/>

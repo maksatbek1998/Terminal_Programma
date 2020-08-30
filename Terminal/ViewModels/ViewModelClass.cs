@@ -247,7 +247,7 @@ namespace Terminal.ViewModels
         
         public ICommand ToKG => new RelayCommand((obj) => 
         {
-            StaticClass.Flag = "KGS"; 
+            StaticClass.Flag = "KG"; 
              Cashier = LanguageList[0].LanguageKG;
              Appointment = LanguageList[1].LanguageKG;
              Laboratory = LanguageList[2].LanguageKG;
@@ -269,7 +269,7 @@ namespace Terminal.ViewModels
 
         public ICommand ToRU => new RelayCommand((obj) =>
         {
-            StaticClass.Flag = "RUS";
+            StaticClass.Flag = "RU";
             Cashier = LanguageList[0].LanguageRU;
             Appointment = LanguageList[1].LanguageRU;
             Laboratory = LanguageList[2].LanguageRU;
@@ -292,7 +292,7 @@ namespace Terminal.ViewModels
 
         public ICommand ToEN => new RelayCommand((obj) =>
         {
-            StaticClass.Flag = "ENG";
+            StaticClass.Flag = "EN";
             Cashier = LanguageList[0].LanguageEN;
             Appointment = LanguageList[1].LanguageEN;
             Laboratory = LanguageList[2].LanguageEN;
@@ -315,11 +315,11 @@ namespace Terminal.ViewModels
 
         private void Dysplay()
         {
-            if(StaticClass.Flag=="ENG")
+            if(StaticClass.Flag=="EN")
             ToEN.Execute(null);
-            if (StaticClass.Flag == "KGS")
+            if (StaticClass.Flag == "KG")
                 ToKG .Execute(null);
-            if (StaticClass.Flag == "RUS")
+            if (StaticClass.Flag == "RU")
                 ToRU.Execute(null);
             
         }

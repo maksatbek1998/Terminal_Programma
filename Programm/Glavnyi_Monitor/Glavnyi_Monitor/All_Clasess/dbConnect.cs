@@ -13,7 +13,10 @@ namespace Glavnyi_Monitor.All_Clasess
     {
 
 
-        public MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Initial Catalog='medlinedb';username=root;password=123456;CharSet=utf8;");
+        MySqlConnection connection = new MySqlConnection("datasource=10.10.10.123; port=3306;Initial Catalog='medlinedb';username=terminal;password=123456;CharSet=utf8;");
+
+        // public MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306;Initial Catalog='medlinedb';username=root;password=123456;CharSet=utf8;");
+        // public MySqlConnection connection = new MySqlConnection("datasource=192.168.0.26; port=3306;Initial Catalog='medlinedb';username=admin;password=server_terminal_2019#;CharSet=utf8;");
 
         public delegate void DisplaySourse(DataTable db);
         public event DisplaySourse eventDysplay;

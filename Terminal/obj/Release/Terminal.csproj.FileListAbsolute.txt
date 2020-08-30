@@ -1,0 +1,9 @@
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\Terminal.csprojAssemblyReference.cache
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\Folder_Windows\For_print.g.cs
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\Folder_Windows\Sleep_Window.g.cs
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\Folder_Windows\Window1.g.cs
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\MainWindow.g.cs
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\App.g.cs
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\Terminal_MarkupCompile.cache
+D:\project\electron\Terminal_Programma\Terminal\obj\Release\Terminal_MarkupCompile.lref

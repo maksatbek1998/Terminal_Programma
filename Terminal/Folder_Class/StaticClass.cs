@@ -8,6 +8,6 @@ namespace Terminal.Folder_Class
 {
     public static class StaticClass
     {
-        public static string Flag { get; set; } = "KGS";
+        public static string Flag { get; set; } = "KG";
     }
 }

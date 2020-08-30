@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using Terminal.Folder_Class;
@@ -12,27 +14,49 @@ namespace Terminal
     /*Program*/
     public partial class MainWindow :Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
+            Saat();
+            
+           
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Time;
             timer.Start();
             Time_Strart();
+           
+
         }
         dbConnect dbCon;
+        int CouuntTimer = 0;
         DateTime thisDay = DateTime.Today;
-             void Time(object sender, EventArgs e)
+        ConnectWindow connectWindow;
+        void Time(object sender, EventArgs e)
         {
+            Saat();
+            CouuntTimer++;
+            if (CouuntTimer >= 360)
+            {
+                dbCon = new dbConnect();
+                dbCon.ResetConnect();
+                CouuntTimer = 0;
+            }
+
+
+        }
+        private void Saat()
+        {
+
             DateTime dateTime = DateTime.Now;
             var dateTime1 = DateTime.Now.TimeOfDay;
             Data.Text = dateTime.ToLongDateString();
-            var time1 = new TimeSpan(00,00,0);
-            var time2 = new TimeSpan(10,00,0);
-            if (time1>dateTime1 && time2>dateTime1)
+            var time1 = new TimeSpan(00, 00, 0);
+            var time2 = new TimeSpan(10, 00, 0);
+            if (time1 > dateTime1 && time2 > dateTime1)
             {
-                Hours.Text ="0"+dateTime.ToShortTimeString();
+                Hours.Text = "0" + dateTime.ToShortTimeString();
             }
             else
             {
@@ -71,31 +95,44 @@ namespace Terminal
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-           kassa.IsEnabled = false;
-            Zaderjka();
-            // string numberOchered = dbCon.RegistrOchered("К");
+            
             dbCon = new dbConnect();
+            dbCon.ConnectDel += () => {
+                connectWindow = new ConnectWindow();
+                connectWindow.ShowDialog();
+            };
+            Thread myThread = new Thread(new ThreadStart(Zaderjka));
+            myThread.SetApartmentState(ApartmentState.STA);
+            myThread.Start();
+            kassa.IsEnabled = false;
             dbCon.sendData += (x, y) =>
             {
-                For_print for_Print = new For_print("Касса", "К" + x,
-                    y.ToString("dd.MM.yyyy") + "_" + "К_" + x);
+                For_print for_Print = new For_print(kassa.Content.ToString(), "К" + x,
+                y.ToString("dd.MM.yyyy") + "_" + "К_" + x+"_"+StaticClass.Flag);
                 for_Print.Check_Print();
-               
+                
             };
             dbCon.RegistrOchered("К");
             kassa.IsEnabled = true;
         }
-
+      
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            Thread myThread = new Thread(new ThreadStart(Zaderjka));
+            myThread.SetApartmentState(ApartmentState.STA);
+            myThread.Start();
+
             Lab_A.IsEnabled = false;
-            Zaderjka();
-            //string numberOchered = dbCon.RegistrOchered("ЛА");
+            
             dbCon = new dbConnect();
+            dbCon.ConnectDel += () => {
+                connectWindow = new ConnectWindow();
+                connectWindow.ShowDialog();
+            };
             dbCon.sendData += (x, y) =>
             {
-                For_print for_Print = new For_print("Лаборатория(А)", "ЛА" + x,
-                 y.ToString("dd.MM.yyyy") + "_" + "ЛА_" + x);
+                For_print for_Print = new For_print(Lab_A.Content.ToString(), "ЛА" + x,
+                 y.ToString("dd.MM.yyyy") + "_" + "ЛА_" + x+"_"+StaticClass.Flag);
                 for_Print.Check_Print();
                 
             };
@@ -106,20 +143,27 @@ namespace Terminal
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            Thread myThread = new Thread(new ThreadStart(Zaderjka));
+            myThread.SetApartmentState(ApartmentState.STA);
+            myThread.Start();
             Lab_B.IsEnabled = false;
             Zaderjka();
             dbCon = new dbConnect();
+            dbCon.ConnectDel += () => {
+                connectWindow = new ConnectWindow();
+                connectWindow.ShowDialog();
+            };
             dbCon.sendData += (x, y) =>
             {
-                For_print for_Print = new For_print("Лаборатория(Б)", "ЛБ" + x,
-                y.ToString("dd.MM.yyyy") + "_" + "ЛБ_" + x);
+                For_print for_Print = new For_print(Lab_B.Content.ToString(), "ЛБ" + x,
+                y.ToString("dd.MM.yyyy") + "_" + "ЛБ_" + x+"_"+StaticClass.Flag);
                 for_Print.Check_Print();
                 
             };
             dbCon.RegistrOchered("ЛБ");
             Lab_B.IsEnabled = true;
         }
-        public void Zaderjka()
+        public  void Zaderjka()
         {
             Sleep_Window sleep_Window = new Sleep_Window();
             sleep_Window.ShowDialog();

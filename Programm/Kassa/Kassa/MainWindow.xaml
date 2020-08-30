@@ -5,12 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kassa"
         mc:Ignorable="d"
-        Title="MainWindow" Height="320" ResizeMode="NoResize" Width="350" WindowStyle="None" Icon="Image/Png_Ico.png" AllowsTransparency="True" Topmost="True" Loaded="Window_Loaded" Background="{x:Null}">
+        Title="КАССА" Height="320" 
+        ResizeMode="NoResize" Width="350" WindowStyle="None" 
+        Icon="Image/Png_Ico.png" AllowsTransparency="True" 
+        Topmost="True" Loaded="Window_Loaded" 
+        Background="{x:Null}">
+     
     <Grid Background="White" 
-          MouseLeftButtonDown="Grid_MouseLeftButtonDown" Margin="10,10,5,5">
+          MouseLeftButtonDown="Grid_MouseLeftButtonDown" 
+          Margin="10,10,10,10">
         <Grid.Effect>
-            <DropShadowEffect BlurRadius="10" Direction="280" Opacity="1" ShadowDepth="2"/>
+            <DropShadowEffect ShadowDepth="5" Direction="250" BlurRadius="15"/>
         </Grid.Effect>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="160"/>
@@ -60,4 +67,5 @@
             </StackPanel>
         </Grid>
     </Grid>
+
 </Window>

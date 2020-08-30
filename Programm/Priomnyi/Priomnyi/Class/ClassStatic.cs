@@ -9,6 +9,7 @@ namespace Priomnyi.Class
    public static class ClassStatic
     {
         public static string Id { get; set; }
+        public static string Cat_Id { get; set; }
         public static string Name { get; set; }
        }
 }

@@ -1,9 +1,9 @@
 ﻿using Glavnyi_Monitor.All_Clasess;
 using System;
-using System.Data;
 using System.Windows;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using звук.Class;
 
 namespace Glavnyi_Monitor
 {
@@ -17,12 +17,48 @@ namespace Glavnyi_Monitor
         {
             dbCon = new dbConnect();
             InitializeComponent();
+            #region Timer1
             DispatcherTimer timer = new DispatcherTimer();
+            
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Time1;
             timer.Start();
-            btn_Click();
-            int t = 0, t2=0, t3=0, t4=0, t5=0, t6=0, t7=0, t8=0, t9=0, t10=0, t11=0;
+            #endregion
+            string flag = null;
+            string flag1 = "";
+            int s = 0;
+            #region Timer2
+            DispatcherTimer timer2 = new DispatcherTimer();
+            timer2.Interval = TimeSpan.FromMilliseconds(900);
+            timer2.Tick += (object sender, EventArgs e) =>
+            {
+                s++;
+                Sound.Muzic();
+                //Sound.Muzic_ru();
+                if (Sound.Name!="") { 
+                textbox_Napr.Text = Sound.Name.ToUpper();
+                textbox_Naumber.Text = Sound.Number;
+                    if(flag!= Sound.Number)
+                    {
+                        s = 0;
+                        flag = Sound.Number;
+                        Anmation_Colomka_Show();
+
+                    }
+                    
+                    
+                }
+
+                if (s>=20)
+                {
+                   Anmation_Colomka_Close();
+                }
+
+
+            };
+            timer2.Start();
+            #endregion
+            int t = 0, t2=0, t3=0, t4=0, t5=0, t6=0, t7=0, t8=0, t9=0, t10=0, t11=0,t12=0,t13=0,t14=0;
             string[] a = new string[5];
             string[] a1 = new string[5];
             string[] a2 = new string[5];
@@ -34,6 +70,9 @@ namespace Glavnyi_Monitor
             string[] a8 = new string[5];
             string[] a9 = new string[5];
             string[] a10 = new string[5];
+            string[] a11 = new string[5];
+            string[] a12 = new string[5];
+            string[] a13 = new string[5];
              
             dbCon.del += i => {
 
@@ -105,12 +144,27 @@ namespace Glavnyi_Monitor
                     if (i.Rows[j][1].ToString() == "С")
                     {
                         t11++;
-                        a9[t11] = "С" + i.Rows[j][0].ToString();
+                        a10[t11] = "С" + i.Rows[j][0].ToString();
+                    }
+                    if (i.Rows[j][1].ToString() == "ЛА")
+                    {
+                        t12++;
+                        a11[t12] = "ЛА" + i.Rows[j][0].ToString();
+                    }
+                    if (i.Rows[j][1].ToString() == "ЛБ")
+                    {
+                        t13++;
+                        a12[t13] = "ЛБ" + i.Rows[j][0].ToString();
+                    }
+                    if (i.Rows[j][1].ToString() == "ЭКГ")
+                    {
+                        t14++;
+                        a13[t14] = "ЭКГ" + i.Rows[j][0].ToString();
                     }
                 }
              
 
-                t = 0; t2=0; t3=0; t4=0; t5=0; t6=0; t7=0; t8=0; t9=0; t10=0; t11=0;
+                t = 0; t2=0; t3=0; t4=0; t5=0; t6=0; t7=0; t8=0; t9=0; t10 = 0; t11 = 0; t12 = 0; t13 = 0; t14 = 0;
                 V1.Text = a[1]; V2.Text = a[2]; V3.Text = a[3];
                 R1.Text = a1[1]; R2.Text = a1[2]; R3.Text = a1[3];
                 O1.Text = a2[1]; O2.Text = a2[2]; O3.Text = a2[3];
@@ -122,7 +176,11 @@ namespace Glavnyi_Monitor
                 A1.Text = a8[1]; A2.Text = a8[2]; A3.Text = a8[3];
                 L1.Text = a9[1]; L2.Text = a9[2]; L3.Text = a9[3];
                 C1.Text = a10[1]; C2.Text = a10[2]; C3.Text = a10[3];
-               
+               LA1.Text = a11[1]; LA2.Text = a11[2]; LA3.Text = a11[3];
+                LB1.Text = a12[1]; LB2.Text = a12[2]; LB3.Text = a12[3];
+                EKG1.Text = a13[1]; EKG2.Text = a13[2]; EKG3.Text = a13[3];
+
+
             };
             dbCon.RegistrOchered();
         }
@@ -144,12 +202,18 @@ namespace Glavnyi_Monitor
             }
         }
        
-        private void btn_Click()
+        private void Anmation_Colomka_Close()
         {
-            Storyboard sb = this.FindResource("Kalomka_Animation") as Storyboard;
-            sb.Begin();
-            Storyboard sb1 = this.FindResource("TextBloc_Animated") as Storyboard;
-            sb1.Begin();
+            Colomka.Visibility = Visibility.Visible;
+            Colomka_TextBlock.Visibility = Visibility.Hidden;
         }
+        private void Anmation_Colomka_Show()
+        {
+            Colomka_TextBlock.Visibility = Visibility.Visible;
+            Colomka.Visibility = Visibility.Hidden;
+        }
+
+
+
     }
 }

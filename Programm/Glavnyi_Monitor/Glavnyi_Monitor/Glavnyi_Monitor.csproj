@@ -39,6 +39,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\c#\MySQL\MySql.Data.DLL</HintPath>
     </Reference>
+    <Reference Include="NAudio">
+      <HintPath>C:\Program Files (x86)\WindowsTK\WindowsTK\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -59,7 +62,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="All_Clasess\ClassDelegate.cs" />
     <Compile Include="Commands\RealayCommand.cs" />
+    <Compile Include="Talker\Data.cs" />
+    <Compile Include="Talker\Naudio.cs" />
+    <Compile Include="Talker\Sound.cs" />
     <Compile Include="ViewModels\VIewModelsDiraction.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +129,22 @@
   <ItemGroup>
     <Resource Include="Image\Person.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\Allergiolog.png" />
+    <Resource Include="Image\endokrinolog.png" />
+    <Resource Include="Image\gematolog.png" />
+    <Resource Include="Image\Gepatolog.png" />
+    <Resource Include="Image\Kardiolog.png" />
+    <Resource Include="Image\Laboratory.png" />
+    <Resource Include="Image\Lor.png" />
+    <Resource Include="Image\Nefrolog.png" />
+    <Resource Include="Image\Nevropotolog.png" />
+    <Resource Include="Image\Oftalmolog.png" />
+    <Resource Include="Image\pediatr.png" />
+    <Resource Include="Image\Stomatolog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\EKG.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

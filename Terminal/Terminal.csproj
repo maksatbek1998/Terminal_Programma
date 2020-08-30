@@ -111,10 +111,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConnectWindow.xaml.cs">
+      <DependentUpon>ConnectWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Folder_Class\dbConnect.cs" />
     <Compile Include="Folder_Class\StaticClass.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="ViewModels\ViewModelClass.cs" />
+    <Page Include="ConnectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Folder_Windows\For_print.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
